@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Max Pulse | KICKS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="cart.html" class="position-relative text-decoration-none cart-icon-link"><i class="bi bi-bag fs-5"></i><span class="cart-badge">0</span></a>
+        </div>
+    </div>
+</nav>
+
+<!-- Offcanvas Mobile Menu -->
+<div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title"><img src="KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="products.html"><i class="bi bi-grid me-2"></i>Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi bi-bag me-2"></i>Cart</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i>About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Breadcrumb -->
+<section class="bg-dark py-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Air Max Pulse</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Product Detail -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row g-5">
+            <!-- LEFT: Product Image Carousel -->
+            <div class="col-lg-6">
+                <div class="product-detail-img">
+                    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner rounded-4 overflow-hidden">
+                            <div class="carousel-item active">
+                                <img src="https://placehold.co/600x400/111111/ffffff?text=Air+Max+View+1" class="d-block w-100" alt="Air Max Pulse View 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://placehold.co/600x400/111111/ffffff?text=Air+Max+View+2" class="d-block w-100" alt="Air Max Pulse View 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://placehold.co/600x400/111111/ffffff?text=Air+Max+View+3" class="d-block w-100" alt="Air Max Pulse View 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Product Info -->
+            <div class="col-lg-6">
+                <div class="product-info">
+                    <h1 class="fw-bold text-white mb-3">AIR MAX PULSE</h1>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <span class="text-white-50 ms-2">(2,847 reviews)</span>
+                    </div>
+                    <h2 class="text-white fw-bold mb-3">₱7,495.00</h2>
+                    <p class="text-white-50 mb-4">Experience next-level comfort with Air Max Pulse. Featuring revolutionary Air cushioning technology, a sleek knit upper, and a durable rubber outsole. Whether you're hitting the track or the streets, these sneakers deliver unmatched style and performance.</p>
+                    <span class="badge bg-success mb-4">In Stock</span>
+
+                    <!-- Quantity -->
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <label class="text-white fw-semibold">Quantity:</label>
+                        <div class="input-group" style="width: 140px;">
+                            <button class="btn btn-outline-light" type="button" id="qty-minus">−</button>
+                            <input type="number" class="form-control text-center bg-dark text-white border-secondary" id="qty-input" value="1" min="1">
+                            <button class="btn btn-outline-light" type="button" id="qty-plus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <button class="btn btn-accent-custom btn-lg btn-add-cart" data-name="Air Max Pulse" data-price="7495">
+                            <i class="bi bi-bag-plus me-2"></i>Add to Cart
+                        </button>
+                        <button class="btn btn-outline-custom btn-lg">
+                            <i class="bi bi-heart me-2"></i>Add to Wishlist
+                        </button>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
+                            <i class="bi bi-rulers me-2"></i>Size Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specifications Accordion -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="accordion" id="specsAccordion">
+                    <!-- Product Details -->
+                    <div class="accordion-item bg-dark border-secondary">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specDetails" aria-expanded="true">
+                                Product Details
+                            </button>
+                        </h2>
+                        <div id="specDetails" class="accordion-collapse collapse show" data-bs-parent="#specsAccordion">
+                            <div class="accordion-body">
+                                <table class="table table-dark table-bordered mb-0">
+                                    <tbody>
+                                        <tr><th>Style</th><td>DC4165-002</td></tr>
+                                        <tr><th>Color</th><td>Black/White/Red</td></tr>
+                                        <tr><th>Weight</th><td>340g</td></tr>
+                                        <tr><th>Technology</th><td>Air Max cushioning</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Specifications -->
+                    <div class="accordion-item bg-dark border-secondary">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specSpecs">
+                                Specifications
+                            </button>
+                        </h2>
+                        <div id="specSpecs" class="accordion-collapse collapse" data-bs-parent="#specsAccordion">
+                            <div class="accordion-body">
+                                <table class="table table-dark table-bordered mb-0">
+                                    <tbody>
+                                        <tr><th>Upper</th><td>Engineered knit</td></tr>
+                                        <tr><th>Outsole</th><td>Rubber</td></tr>
+                                        <tr><th>Closure</th><td>Lace-up</td></tr>
+                                        <tr><th>Season</th><td>All-season</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Shipping Info -->
+                    <div class="accordion-item bg-dark border-secondary">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specShipping">
+                                Shipping Info
+                            </button>
+                        </h2>
+                        <div id="specShipping" class="accordion-collapse collapse" data-bs-parent="#specsAccordion">
+                            <div class="accordion-body">
+                                <table class="table table-dark table-bordered mb-0">
+                                    <tbody>
+                                        <tr><th>Delivery</th><td>3-5 business days</td></tr>
+                                        <tr><th>Free Shipping</th><td>Orders over ₱5,000</td></tr>
+                                        <tr><th>Returns</th><td>30-day policy</td></tr>
+                                        <tr><th>Carrier</th><td>Grab Express, J&T</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-5">
+            <h3 class="text-white fw-bold mb-4">Related Products</h3>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <img src="https://placehold.co/600x400/222222/ffffff?text=Ultraboost+23" class="card-img-top" alt="Ultraboost 23">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-white">Ultraboost 23</h5>
+                            <p class="text-white fw-bold">₱8,995.00</p>
+                            <a href="#" class="btn btn-outline-custom btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <img src="https://placehold.co/600x400/222222/ffffff?text=Classic+Leather+Pro" class="card-img-top" alt="Classic Leather Pro">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-white">Classic Leather Pro</h5>
+                            <p class="text-white fw-bold">₱5,495.00</p>
+                            <a href="#" class="btn btn-outline-custom btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <img src="https://placehold.co/600x400/222222/ffffff?text=Running+Elite+X" class="card-img-top" alt="Running Elite X">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-white">Running Elite X</h5>
+                            <p class="text-white fw-bold">₱6,795.00</p>
+                            <a href="#" class="btn btn-outline-custom btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card bg-dark border-secondary h-100">
+                        <img src="https://placehold.co/600x400/222222/ffffff?text=Street+Runner+V2" class="card-img-top" alt="Street Runner V2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-white">Street Runner V2</h5>
+                            <p class="text-white fw-bold">₱4,995.00</p>
+                            <a href="#" class="btn btn-outline-custom btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Size Guide Modal -->
+<div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title fw-bold" id="sizeGuideModalLabel">Size Guide</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-dark table-bordered mb-0">
+                    <thead>
+                        <tr>
+                            <th>US</th>
+                            <th>EU</th>
+                            <th>CM</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>7</td><td>40</td><td>25</td><td><span class="badge bg-success">In Stock</span></td></tr>
+                        <tr><td>8</td><td>41</td><td>26</td><td><span class="badge bg-success">In Stock</span></td></tr>
+                        <tr><td>9</td><td>42.5</td><td>27</td><td><span class="badge bg-success">In Stock</span></td></tr>
+                        <tr><td>10</td><td>44</td><td>28</td><td><span class="badge bg-success">In Stock</span></td></tr>
+                        <tr><td>11</td><td>45</td><td>29</td><td><span class="badge bg-warning text-dark">Limited</span></td></tr>
+                        <tr><td>12</td><td>46</td><td>30</td><td><span class="badge bg-danger">Out of Stock</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5 border-top border-secondary">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h5 class="fw-bold">KICK<span class="brand-accent">S</span></h5>
+                <p class="text-white-50">Your destination for premium sneakers and streetwear. Step up your game with KICKS.</p>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="fw-bold">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="fw-bold">Follow Us</h6>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="border-secondary mt-4">
+        <p class="text-center text-white-50 mb-0">&copy; 2026 KICKS. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Toast Container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                <i class="bi bi-check-circle me-2"></i>Item added to cart!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+    // Quantity +/- Controls
+    document.addEventListener('DOMContentLoaded', function () {
+        const qtyInput = document.getElementById('qty-input');
+        const qtyMinus = document.getElementById('qty-minus');
+        const qtyPlus = document.getElementById('qty-plus');
+
+        qtyMinus.addEventListener('click', function () {
+            let val = parseInt(qtyInput.value) || 1;
+            if (val > 1) qtyInput.value = val - 1;
+        });
+
+        qtyPlus.addEventListener('click', function () {
+            let val = parseInt(qtyInput.value) || 1;
+            qtyInput.value = val + 1;
+        });
+
+        qtyInput.addEventListener('change', function () {
+            let val = parseInt(qtyInput.value);
+            if (!val || val < 1) qtyInput.value = 1;
+        });
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('d-none');
+            } else {
+                scrollBtn.classList.add('d-none');
+            }
+        });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
