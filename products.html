@@ -10,32 +10,41 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- ==================== NAVBAR ==================== -->
+  <!-- navbar-expand-lg: navbar collapses at lg breakpoint; sticky-top: sticks to top on scroll -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+      <a class="navbar-brand" href="index.html"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+      <!-- navbar-toggler: hamburger button for mobile; data-bs-toggle="offcanvas" opens the offcanvas side menu -->
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- collapse navbar-collapse: hides nav links on mobile, shown via toggler -->
       <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- mx-auto: centers the nav items horizontally; mb-2 mb-lg-0: bottom margin on mobile only -->
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <!-- .active: highlights current page link -->
           <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
+        <!-- position-relative: positions cart badge relative to this link; fs-5: font-size 1.25rem -->
         <a href="cart.html" class="position-relative text-decoration-none cart-icon-link"><i class="bi bi-bag fs-5"></i><span class="cart-badge">0</span></a>
       </div>
     </div>
   </nav>
 
-  <!-- Offcanvas Mobile Menu -->
+  <!-- ==================== OFFCANVAS MOBILE MENU ==================== -->
+  <!-- offcanvas: Bootstrap slide-in panel; offcanvas-end: slides in from the right -->
   <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="mobileMenuLabel"><img src="KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
+      <h5 class="offcanvas-title" id="mobileMenuLabel"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
+      <!-- btn-close-white: white X icon for dark backgrounds -->
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
+      <!-- gap-3: 1rem spacing between flex/grid children (Bootstrap utility) -->
       <ul class="navbar-nav gap-3">
         <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link active" href="products.html"><i class="bi bi-grid me-2"></i>Products</a></li>
@@ -46,32 +55,41 @@
     </div>
   </div>
 
-  <!-- Page Header -->
+  <!-- ==================== PAGE HEADER ==================== -->
+  <!-- about-hero: custom CSS class for the hero banner section -->
   <section class="about-hero">
     <div class="container text-center">
       <h1>SHOP ALL</h1>
+      <!-- lead: Bootstrap class that makes paragraph text larger and more prominent -->
       <p class="lead">Find your perfect pair</p>
     </div>
   </section>
 
-  <!-- Products Grid -->
+  <!-- ==================== PRODUCTS GRID ==================== -->
+  <!-- section-padding: custom CSS class adding vertical padding to the section -->
   <section class="section-padding">
     <div class="container">
+      <!-- row g-4: flex row with gutter spacing of 1.5rem between columns -->
       <div class="row g-4">
 
-        <!-- Product 1 -->
+        <!-- ==================== PRODUCT 1 ==================== -->
+        <!-- col-lg-3 col-md-4 col-sm-6: responsive grid — 3/12 cols on large, 4/12 on medium, 6/12 on small screens -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
               <img src="images/product-images/air-max-pulse.jpg" class="card-img-top" alt="Air Max Pulse">
+              <!-- badge-sale: custom red sale badge; position-absolute top-0 end-0 m-2: pins badge to top-right corner with margin -->
               <span class="badge badge-sale position-absolute top-0 end-0 m-2">-40%</span>
               <span class="badge badge-sale position-absolute top-0 m-2" style="right: 55px;">HOT</span>
             </div>
             <div class="card-body">
               <h5 class="card-title">Air Max Pulse</h5>
               <p class="card-text">Lightweight cushioning meets bold design</p>
+              <!-- original-price: custom CSS class for strikethrough original price -->
               <p class="price"><span class="original-price">&#8369;12,495.00</span> &#8369;7,495.00</p>
+              <!-- d-flex: display flex; gap-2: 0.5rem spacing between flex children -->
               <div class="d-flex gap-2">
+                <!-- btn-primary-custom: custom styled primary button; btn-sm: small button size -->
                 <a href="product-details.html" class="btn btn-primary-custom btn-sm">View Details</a>
                 <button class="btn btn-outline-custom btn-sm btn-add-cart" data-name="Air Max Pulse" data-price="7495">Add to Cart</button>
               </div>
@@ -79,11 +97,12 @@
           </div>
         </div>
 
-        <!-- Product 2 -->
+        <!-- ==================== PRODUCT 2 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
               <img src="images/product-images/ultraboost-23.jpg" class="card-img-top" alt="Ultraboost 23">
+              <!-- badge-new: custom CSS badge for new arrivals -->
               <span class="badge badge-new position-absolute top-0 end-0 m-2">New</span>
             </div>
             <div class="card-body">
@@ -98,7 +117,7 @@
           </div>
         </div>
 
-        <!-- Product 3 -->
+        <!-- ==================== PRODUCT 3 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -117,7 +136,7 @@
           </div>
         </div>
 
-        <!-- Product 4 -->
+        <!-- ==================== PRODUCT 4 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -137,7 +156,7 @@
           </div>
         </div>
 
-        <!-- Product 5 -->
+        <!-- ==================== PRODUCT 5 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -156,7 +175,7 @@
           </div>
         </div>
 
-        <!-- Product 6 -->
+        <!-- ==================== PRODUCT 6 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -175,7 +194,7 @@
           </div>
         </div>
 
-        <!-- Product 7 -->
+        <!-- ==================== PRODUCT 7 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -195,7 +214,7 @@
           </div>
         </div>
 
-        <!-- Product 8 -->
+        <!-- ==================== PRODUCT 8 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -215,7 +234,7 @@
           </div>
         </div>
 
-        <!-- Product 9 -->
+        <!-- ==================== PRODUCT 9 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -234,7 +253,7 @@
           </div>
         </div>
 
-        <!-- Product 10 -->
+        <!-- ==================== PRODUCT 10 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -253,7 +272,7 @@
           </div>
         </div>
 
-        <!-- Product 11 -->
+        <!-- ==================== PRODUCT 11 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -272,7 +291,7 @@
           </div>
         </div>
 
-        <!-- Product 12 -->
+        <!-- ==================== PRODUCT 12 ==================== -->
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card product-card">
             <div class="card-img-wrapper">
@@ -291,12 +310,15 @@
           </div>
         </div>
 
-      </div>
+      </div> <!-- end .row g-4 -->
 
-      <!-- Pagination -->
+      <!-- ==================== PAGINATION ==================== -->
+      <!-- mt-4: margin-top 1.5rem; pagination: Bootstrap pagination component -->
       <nav aria-label="Product pagination" class="mt-4">
+        <!-- justify-content-center: centers the pagination links horizontally -->
         <ul class="pagination justify-content-center">
           <li class="page-item"><a class="page-link" href="#">&laquo; Previous</a></li>
+          <!-- .active: highlights current page in pagination -->
           <li class="page-item active"><a class="page-link" href="#">1</a></li>
           <li class="page-item"><a class="page-link" href="#">2</a></li>
           <li class="page-item"><a class="page-link" href="#">Next &raquo;</a></li>
@@ -305,13 +327,18 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==================== FOOTER ==================== -->
+  <!-- py-5: padding top & bottom 3rem; bg-dark: dark background; text-white: white text -->
   <footer class="site-footer py-5 bg-dark text-white">
     <div class="container">
+      <!-- row: Bootstrap grid row for the 3 footer columns -->
       <div class="row">
+        <!-- col-lg-4 col-md-6 mb-4: 4/12 cols on large, 6/12 on medium, with 1.5rem bottom margin -->
         <div class="col-lg-4 col-md-6 mb-4">
           <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
+          <!-- text-secondary: muted grey text; small: smaller font size -->
           <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
+          <!-- d-flex gap-3 mt-3: flex row with 1rem gaps and 1rem top margin for social icons -->
           <div class="d-flex gap-3 mt-3">
             <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
             <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
@@ -320,7 +347,9 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <h5 class="fw-bold mb-3">Quick Links</h5>
+          <!-- list-unstyled: removes default list bullet styling -->
           <ul class="list-unstyled footer-links">
+            <!-- mb-2: margin-bottom 0.5rem for spacing between list items -->
             <li class="mb-2"><a href="index.html">Home</a></li>
             <li class="mb-2"><a href="products.html">Products</a></li>
             <li class="mb-2"><a href="cart.html">Cart</a></li>
@@ -331,6 +360,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <h5 class="fw-bold mb-3">Contact Info</h5>
           <ul class="list-unstyled footer-contact">
+            <!-- me-2: margin-end (right) 0.5rem — adds space between icon and text -->
             <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Bagtas, Tanza, Cavite</li>
             <li class="mb-2"><i class="bi bi-telephone me-2"></i>+63 917 555 0199</li>
             <li class="mb-2"><i class="bi bi-envelope me-2"></i>support@kicks.com</li>
@@ -338,16 +368,19 @@
         </div>
       </div>
       <hr class="border-secondary">
+      <!-- text-center: centers text; mb-0: removes default bottom margin -->
       <p class="text-center text-secondary small mb-0">&copy; 2026 KICKS. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
+  <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
   <button class="scroll-top"><i class="bi bi-arrow-up"></i></button>
 
-  <!-- Toast Container -->
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <!-- toast-container: Bootstrap container for positioning toast notifications -->
   <div id="toast-container" class="toast-container"></div>
 
+  <!-- Bootstrap JS bundle (includes Popper.js for dropdowns, tooltips, etc.) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>

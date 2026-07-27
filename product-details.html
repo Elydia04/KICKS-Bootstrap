@@ -10,33 +10,42 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- ==================== NAVBAR ==================== -->
+<!-- navbar-expand-lg: collapses at lg breakpoint; sticky-top: sticks to viewport top on scroll -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+        <a class="navbar-brand" href="index.html"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+        <!-- navbar-toggler: mobile hamburger button; data-bs-toggle="offcanvas" triggers the side menu -->
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- collapse navbar-collapse: hidden on mobile, visible on lg+ screens -->
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- mx-auto: centers nav items horizontally; mb-2 mb-lg-0: bottom margin only on mobile -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
+            <!-- position-relative: needed so cart-badge can be absolutely positioned inside; fs-5: font-size 1.25rem -->
             <a href="cart.html" class="position-relative text-decoration-none cart-icon-link"><i class="bi bi-bag fs-5"></i><span class="cart-badge">0</span></a>
         </div>
     </div>
 </nav>
 
-<!-- Offcanvas Mobile Menu -->
+<!-- ==================== OFFCANVAS MOBILE MENU ==================== -->
+<!-- offcanvas: Bootstrap slide-in panel; offcanvas-end: slides from the right side -->
 <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title"><img src="KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
+        <h5 class="offcanvas-title"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
+        <!-- btn-close-white: white X icon for dark backgrounds; data-bs-dismiss closes the offcanvas -->
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
+        <!-- gap-3: 1rem spacing between flex children -->
         <ul class="navbar-nav gap-3">
+            <!-- me-2: margin-end 0.5rem, adds space between icon and text -->
             <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
             <li class="nav-item"><a class="nav-link active" href="products.html"><i class="bi bi-grid me-2"></i>Products</a></li>
             <li class="nav-item"><a class="nav-link" href="cart.html"><i class="bi bi-bag me-2"></i>Cart</a></li>
@@ -46,34 +55,48 @@
     </div>
 </div>
 
-<!-- Breadcrumb -->
+<!-- ==================== BREADCRUMB NAVIGATION ==================== -->
+<!-- py-3: padding top & bottom 1rem; bg-dark: dark background -->
 <section class="bg-dark py-3">
     <div class="container">
         <nav aria-label="breadcrumb">
+            <!-- breadcrumb: Bootstrap breadcrumb component; mb-0: removes default bottom margin -->
             <ol class="breadcrumb mb-0">
+                <!-- text-white-50: semi-transparent white text; text-decoration-none: removes underline -->
                 <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                 <li class="breadcrumb-item"><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
+                <!-- .active: marks current page; aria-current="page" for accessibility -->
                 <li class="breadcrumb-item active text-white" aria-current="page">Air Max Pulse</li>
             </ol>
         </nav>
     </div>
 </section>
 
-<!-- Product Detail -->
+<!-- ==================== PRODUCT DETAIL SECTION ==================== -->
+<!-- py-5: padding top & bottom 3rem -->
 <section class="py-5 bg-dark">
     <div class="container">
+        <!-- row g-5: flex row with 3rem gutter spacing between the two columns -->
         <div class="row g-5">
-            <!-- LEFT: Product Image Carousel -->
+
+            <!-- ==================== LEFT COLUMN: PRODUCT IMAGE CAROUSEL ==================== -->
+            <!-- col-lg-6: takes 6/12 columns (half width) on large screens -->
             <div class="col-lg-6">
                 <div class="product-detail-img">
+                    <!-- carousel: Bootstrap carousel component; data-bs-ride="carousel" enables auto-sliding -->
                     <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- carousel-indicators: small dots at the bottom to jump between slides -->
                         <div class="carousel-indicators">
+                            <!-- active: marks the initial/current slide indicator -->
                             <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
                             <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
                         </div>
+                        <!-- rounded-4: border-radius 1rem; overflow-hidden: clips images to rounded corners -->
                         <div class="carousel-inner rounded-4 overflow-hidden">
+                            <!-- .active on first carousel-item: which slide shows first -->
                             <div class="carousel-item active">
+                                <!-- d-block w-100: makes image block-level and full width of its container -->
                                 <img src="images/product-images/air-max-pulse.jpg" class="d-block w-100" alt="Air Max Pulse View 1">
                             </div>
                             <div class="carousel-item">
@@ -83,6 +106,7 @@
                                 <img src="images/product-images/carousel-2.jpg" class="d-block w-100" alt="Air Max Pulse View 3">
                             </div>
                         </div>
+                        <!-- carousel-control-prev/next: Bootstrap left/right arrow controls -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
@@ -93,61 +117,79 @@
                 </div>
             </div>
 
-            <!-- RIGHT: Product Info -->
+            <!-- ==================== RIGHT COLUMN: PRODUCT INFO ==================== -->
             <div class="col-lg-6">
                 <div class="product-info">
                     <h1 class="fw-bold text-white mb-3">AIR MAX PULSE</h1>
+                    <!-- d-flex align-items-center gap-2: flex row, vertically centered, 0.5rem spacing for star rating -->
                     <div class="d-flex align-items-center gap-2 mb-3">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
+                        <!-- ms-2: margin-start 0.5rem; text-white-50: semi-transparent white -->
                         <span class="text-white-50 ms-2">(2,847 reviews)</span>
                     </div>
                     <h2 class="text-white fw-bold mb-3">₱7,495.00</h2>
+                    <!-- mb-4: margin-bottom 1.5rem -->
                     <p class="text-white-50 mb-4">Experience next-level comfort with Air Max Pulse. Featuring revolutionary Air cushioning technology, a sleek knit upper, and a durable rubber outsole. Whether you're hitting the track or the streets, these sneakers deliver unmatched style and performance.</p>
+                    <!-- bg-success: green background badge for stock status -->
                     <span class="badge bg-success mb-4">In Stock</span>
 
-                    <!-- Quantity -->
+                    <!-- ==================== QUANTITY SELECTOR ==================== -->
+                    <!-- d-flex align-items-center gap-3 mb-4: flex row, vertically centered, 1rem gaps, 1.5rem bottom margin -->
                     <div class="d-flex align-items-center gap-3 mb-4">
                         <label class="text-white fw-semibold">Quantity:</label>
+                        <!-- input-group: Bootstrap component that attaches buttons to an input field -->
                         <div class="input-group" style="width: 140px;">
                             <button class="btn btn-outline-light" type="button" id="qty-minus">−</button>
+                            <!-- form-control: standard Bootstrap input styling; text-center: centers the number -->
                             <input type="number" class="form-control text-center bg-dark text-white border-secondary" id="qty-input" value="1" min="1">
                             <button class="btn btn-outline-light" type="button" id="qty-plus">+</button>
                         </div>
                     </div>
 
-                    <!-- Action Buttons -->
+                    <!-- ==================== ACTION BUTTONS ==================== -->
+                    <!-- d-flex flex-wrap gap-3 mb-4: flex row that wraps on small screens, 1rem gaps, 1.5rem bottom margin -->
                     <div class="d-flex flex-wrap gap-3 mb-4">
+                        <!-- btn-lg: large button size; btn-accent-custom: custom accent color button -->
                         <button class="btn btn-accent-custom btn-lg btn-add-cart" data-name="Air Max Pulse" data-price="7495">
                             <i class="bi bi-bag-plus me-2"></i>Add to Cart
                         </button>
+                        <!-- btn-outline-success: green outline button; text-white: white text on outline -->
                         <button class="btn btn-outline-success btn-lg text-white">
                             <i class="bi bi-heart text-danger me-2"></i>Add to Wishlist
                         </button>
+                        <!-- data-bs-toggle="modal" data-bs-target="#sizeGuideModal": opens the size guide modal -->
                         <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
                             <i class="bi bi-rulers me-2"></i>Size Guide
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- end .row g-5 -->
 
-        <!-- Specifications Accordion -->
+        <!-- ==================== SPECIFICATIONS ACCORDION ==================== -->
+        <!-- mt-5: margin-top 3rem -->
         <div class="row mt-5">
             <div class="col-12">
+                <!-- accordion: Bootstrap collapsible accordion component; data-bs-parent links panels so only one is open -->
                 <div class="accordion" id="specsAccordion">
-                    <!-- Product Details -->
+
+                    <!-- ==================== ACCORDION: PRODUCT DETAILS ==================== -->
+                    <!-- accordion-item: one collapsible panel; bg-dark border-secondary: dark styling -->
                     <div class="accordion-item bg-dark border-secondary">
                         <h2 class="accordion-header">
+                            <!-- accordion-button: toggle button; .collapsed means it starts closed (not collapsed below starts open) -->
                             <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specDetails" aria-expanded="true">
                                 Product Details
                             </button>
                         </h2>
+                        <!-- .show: panel is expanded by default; data-bs-parent="#specsAccordion" ensures only one panel is open at a time -->
                         <div id="specDetails" class="accordion-collapse collapse show" data-bs-parent="#specsAccordion">
                             <div class="accordion-body">
+                                <!-- table-dark: dark-themed table; table-bordered: adds borders to all cells -->
                                 <table class="table table-dark table-bordered mb-0">
                                     <tbody>
                                         <tr><th>Style</th><td>DC4165-002</td></tr>
@@ -159,9 +201,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Specifications -->
+
+                    <!-- ==================== ACCORDION: SPECIFICATIONS ==================== -->
                     <div class="accordion-item bg-dark border-secondary">
                         <h2 class="accordion-header">
+                            <!-- .collapsed: starts in collapsed state (closed) -->
                             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specSpecs">
                                 Specifications
                             </button>
@@ -179,7 +223,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Shipping Info -->
+
+                    <!-- ==================== ACCORDION: SHIPPING INFO ==================== -->
                     <div class="accordion-item bg-dark border-secondary">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#specShipping">
@@ -199,15 +244,19 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> <!-- end #specsAccordion -->
             </div>
-        </div>
+        </div> <!-- end .row mt-5 -->
 
-        <!-- Related Products -->
+        <!-- ==================== RELATED PRODUCTS ==================== -->
+        <!-- mt-5: margin-top 3rem to separate from accordion -->
         <div class="mt-5">
             <h3 class="text-white fw-bold mb-4">Related Products</h3>
+            <!-- row g-4: flex row with 1.5rem gutter spacing -->
             <div class="row g-4">
+                <!-- col-lg-3 col-md-6: 3/12 cols on large, 6/12 on medium screens -->
                 <div class="col-lg-3 col-md-6">
+                    <!-- h-100: makes card fill full column height for equal card heights -->
                     <div class="card bg-dark border-secondary h-100">
                         <img src="images/product-images/ultraboost-23.jpg" class="card-img-top" alt="Ultraboost 23">
                         <div class="card-body text-center">
@@ -247,20 +296,25 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- end .row g-4 -->
         </div>
-    </div>
+    </div> <!-- end .container -->
 </section>
 
-<!-- Size Guide Modal -->
+<!-- ==================== SIZE GUIDE MODAL ==================== -->
+<!-- modal: Bootstrap modal dialog overlay; fade: adds fade-in animation -->
 <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+    <!-- modal-lg: large modal width; modal-dialog-centered: vertically centered in viewport -->
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content bg-dark text-white">
+            <!-- modal-header: top section with title and close button; border-secondary: grey border -->
             <div class="modal-header border-secondary">
                 <h5 class="modal-title fw-bold" id="sizeGuideModalLabel">Size Guide</h5>
+                <!-- btn-close: Bootstrap X button; data-bs-dismiss="modal" closes the modal -->
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
+                <!-- table-dark table-bordered: dark themed table with cell borders -->
                 <table class="table table-dark table-bordered mb-0">
                     <thead>
                         <tr>
@@ -275,7 +329,9 @@
                         <tr><td>8</td><td>41</td><td>26</td><td><span class="badge bg-success">In Stock</span></td></tr>
                         <tr><td>9</td><td>42.5</td><td>27</td><td><span class="badge bg-success">In Stock</span></td></tr>
                         <tr><td>10</td><td>44</td><td>28</td><td><span class="badge bg-success">In Stock</span></td></tr>
+                        <!-- bg-warning text-dark: yellow badge with dark text for limited stock -->
                         <tr><td>11</td><td>45</td><td>29</td><td><span class="badge bg-warning text-dark">Limited</span></td></tr>
+                        <!-- bg-danger: red badge for out of stock -->
                         <tr><td>12</td><td>46</td><td>30</td><td><span class="badge bg-danger">Out of Stock</span></td></tr>
                     </tbody>
                 </table>
@@ -284,14 +340,20 @@
     </div>
 </div>
 
-<!-- Footer -->
+<!-- ==================== FOOTER ==================== -->
+<!-- py-5: padding top & bottom 3rem; bg-dark text-white: dark background with white text -->
 <footer class="site-footer py-5 bg-dark text-white">
     <div class="container">
+        <!-- row: Bootstrap grid row for 3 footer columns -->
         <div class="row">
+            <!-- col-lg-4 col-md-6 mb-4: 4/12 cols on large, 6/12 on medium, 1.5rem bottom margin -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
+                <!-- text-secondary: muted grey; small: reduced font size -->
                 <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
+                <!-- d-flex gap-3 mt-3: flex row with 1rem gaps for social icon links -->
                 <div class="d-flex gap-3 mt-3">
+                    <!-- fs-5: font-size 1.25rem — larger icon size -->
                     <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
                     <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
@@ -299,7 +361,9 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <h5 class="fw-bold mb-3">Quick Links</h5>
+                <!-- list-unstyled: removes default list bullets and padding -->
                 <ul class="list-unstyled footer-links">
+                    <!-- mb-2: margin-bottom 0.5rem spacing between links -->
                     <li class="mb-2"><a href="index.html">Home</a></li>
                     <li class="mb-2"><a href="products.html">Products</a></li>
                     <li class="mb-2"><a href="cart.html">Cart</a></li>
@@ -310,35 +374,43 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <h5 class="fw-bold mb-3">Contact Info</h5>
                 <ul class="list-unstyled footer-contact">
+                    <!-- me-2: margin-end 0.5rem, spacing between icon and text -->
                     <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Bagtas, Tanza, Cavite</li>
                     <li class="mb-2"><i class="bi bi-telephone me-2"></i>+63 917 555 0199</li>
                     <li class="mb-2"><i class="bi bi-envelope me-2"></i>support@kicks.com</li>
                 </ul>
             </div>
         </div>
+        <!-- border-secondary: grey horizontal rule -->
         <hr class="border-secondary">
+        <!-- text-center: centers text; mb-0: removes bottom margin -->
         <p class="text-center text-secondary small mb-0">&copy; 2026 KICKS. All rights reserved.</p>
     </div>
 </footer>
 
-<!-- Toast Container -->
+<!-- ==================== TOAST NOTIFICATION ==================== -->
+<!-- position-fixed bottom-0 end-0 p-3: pins toast to bottom-right corner with padding -->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <!-- toast: Bootstrap toast notification; text-bg-success: green success styling; border-0: no border -->
     <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert">
+        <!-- d-flex: flex layout for toast body + close button alignment -->
         <div class="d-flex">
             <div class="toast-body">
                 <i class="bi bi-check-circle me-2"></i>Item added to cart!
             </div>
+            <!-- m-auto: auto margins center the close button vertically in the flex row -->
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
         </div>
     </div>
 </div>
 
-<!-- Scroll to Top -->
+<!-- ==================== SCROLL TO TOP BUTTON ==================== -->
 <button class="scroll-top" aria-label="Scroll to top">
     <i class="bi bi-arrow-up"></i>
 </button>
 
-<!-- Scripts -->
+<!-- ==================== SCRIPTS ==================== -->
+<!-- Bootstrap JS bundle (includes Popper.js for tooltips, dropdowns, modals, etc.) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script>
@@ -364,17 +436,19 @@
         });
 
         // Scroll to top button
-        const scrollBtn = document.getElementById('scrollToTop');
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                scrollBtn.classList.remove('d-none');
-            } else {
-                scrollBtn.classList.add('d-none');
-            }
-        });
-        scrollBtn.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        const scrollBtn = document.querySelector('.scroll-top');
+        if (scrollBtn) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.remove('d-none'); // d-none: Bootstrap display-none utility
+                } else {
+                    scrollBtn.classList.add('d-none');
+                }
+            });
+            scrollBtn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     });
 </script>
 </body>
