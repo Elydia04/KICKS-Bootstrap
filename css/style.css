@@ -1,101 +1,64 @@
 /* ============================================================
-  KICKS E-Commerce – Custom Stylesheet
-  ============================================================
-  Table of Contents:
-  1. CSS Variables (colors, shadows, transitions)
-  2. Base / Reset Styles
-  3. Navbar (top navigation bar)
-  4. Hero Banner (homepage hero section)
-  5. Section Titles (reusable section headers)
-  6. Product Cards (product grid items)
-  7. Custom Buttons (btn-primary, btn-outline, btn-accent)
-  8. Category Cards (homepage category grid)
-  9. Promo Banner (homepage promotional section)
-  10. Footer (site-wide footer)
-  11. Product Details (single product page)
-  12. Cart Page (shopping cart table & summary)
-  13. About Page (hero, team cards)
-  14. Contact Page (form & info card)
-  15. Offcanvas Mobile Menu
-  16. Badges (Sale, New labels)
-  17. Pagination (products page page numbers)
-  18. Scroll to Top Button
-  19. Quantity Controls (+/- buttons)
-  20. Accordion (about page values)
-  21. Form Styles
-  22. Toast Notifications
-  23. Responsive Media Queries
+   KICKS E-Commerce – Custom Stylesheet
+   Sections: Variables, Navbar, Hero, Products, Buttons,
+   Categories, Promo, Footer, Details, Cart, About, Contact,
+   Offcanvas, Badges, Pagination, Scroll-Top, Quantity,
+   Accordion, Forms, Toast, Responsive
    ============================================================ */
 
 
-/* ============================================================
-   1. CSS VARIABLES
-   These define reusable values for colors, shadows, and
-   transitions so we can change them in one place.
-   ============================================================ */
+/* 1. CSS VARIABLES */
 :root {
-  --primary-color: #111111;       /* Main dark color for text & backgrounds */
-  --secondary-color: #1a1a1a;     /* Slightly lighter dark */
-  --accent-color: #e53935;        /* Red accent for highlights & buttons */
-  --accent-hover: #c62828;        /* Darker red for hover states */
-  --dark-color: #0a0a0a;          /* Near-black for hero backgrounds */
-  --light-color: #f5f5f5;         /* Light gray for section backgrounds */
-  --text-color: #333333;          /* Default body text color */
-  --text-light: #757575;          /* Muted/secondary text color */
+  --primary-color: #111111;
+  --secondary-color: #1a1a1a;
+  --accent-color: #e53935;
+  --accent-hover: #c62828;
+  --dark-color: #0a0a0a;
+  --light-color: #f5f5f5;
+  --text-color: #333333;
+  --text-light: #757575;
   --white: #ffffff;
-  --gray-bg: #fafafa;             /* Very light gray for subtle backgrounds */
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);         /* Default card shadow */
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);      /* Larger shadow for hover */
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth animation */
-  --border-radius: 8px;           /* Consistent rounded corners */
+  --gray-bg: #fafafa;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius: 8px;
 }
 
 
-/* ============================================================
-   2. BASE / RESET STYLES
-   Sets default styles for the entire page.
-   ============================================================ */
-* { margin: 0; padding: 0; box-sizing: border-box; } /* Reset all element spacing */
+/* 2. BASE / RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  overflow-x: hidden;             /* Prevent horizontal scrollbar */
+  overflow-x: hidden;
 }
 
-/* Default heading styles – bold and dark */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   color: var(--dark-color);
   letter-spacing: -0.5px;
 }
 
-/* Remove default underline from links */
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition);  /* Smooth color transition on hover */
+  transition: var(--transition);
 }
 
-img { max-width: 100%; height: auto; } /* Make all images responsive */
+img { max-width: 100%; height: auto; }
 
 
-/* ============================================================
-  3. NAVBAR
-  The top navigation bar. Uses Bootstrap's navbar-expand-lg
-  which collapses into an offcanvas menu on mobile (<992px).
-   ============================================================ */
-
-/* .navbar – Forces white background on the nav bar */
+/* 3. NAVBAR */
 .navbar {
   background: var(--white) !important;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06);  /* Subtle bottom border shadow */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   padding: 0.6rem 0;
   transition: var(--transition);
 }
 
-/* .navbar-brand – The KICKS logo + text in the top-left */
 .navbar-brand {
   font-weight: 900;
   font-size: 1.6rem;
@@ -104,7 +67,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   text-transform: uppercase;
 }
 
-/* Logo image inside the brand – fixed height, vertical alignment */
 .navbar-brand img {
   height: 40px;
   width: auto;
@@ -115,38 +77,31 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 
 .navbar-brand:hover img { opacity: 0.85; }
 
-/* The red "S" in KICKS – uses accent color */
 .navbar-brand .brand-accent {
   color: var(--accent-color);
 }
 
-/* Desktop navigation links (Home, Products, About, Contact) */
 .navbar-nav .nav-link {
-  color: var(--text-color) !important;   /* Dark text on white navbar */
+  color: var(--text-color) !important;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.5rem 1.2rem !important;     /* Horizontal spacing between links */
+  padding: 0.5rem 1.2rem !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: var(--transition);
 }
 
-/* Link turns red on hover or when active (current page) */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--accent-color) !important;
 }
 
-/* Hamburger button (mobile) – removes default border & adds padding */
 .navbar-toggler { border: none; padding: 0.5rem; }
 .navbar-toggler:focus { box-shadow: none; }
-/* Invert the white hamburger icon to dark so it's visible on white navbar */
 .navbar-toggler-icon { filter: invert(1); }
 
-/* Shopping bag icon in the navbar */
 .cart-icon { position: relative; }
 
-/* Cart icon link – flexbox centers the bag icon vertically */
 .cart-icon-link {
   display: flex;
   align-items: center;
@@ -156,7 +111,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 
 .cart-icon-link:hover { color: var(--accent-color) !important; }
 
-/* Red circle badge showing number of items in cart */
 .cart-badge {
   position: absolute;
   top: -5px;
@@ -167,29 +121,22 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   font-weight: 700;
   width: 18px;
   height: 18px;
-  border-radius: 50%;            /* Makes it a perfect circle */
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;       /* Centers the number inside */
+  justify-content: center;
 }
 
 
-/* ============================================================
-   4. HERO BANNER
-   The large dark section at the top of the homepage with
-   the "Find Your Perfect Kicks" heading.
-   ============================================================ */
-
-/* .hero-banner – Dark background, tall padding, relative for pseudo-elements */
+/* 4. HERO BANNER */
 .hero-banner {
   background: var(--dark-color);
   color: var(--white);
   padding: 6rem 0;
   position: relative;
-  overflow: hidden;              /* Hides the decorative circles that overflow */
+  overflow: hidden;
 }
 
-/* Decorative red circle in top-right corner */
 .hero-banner::before {
   content: '';
   position: absolute;
@@ -198,11 +145,10 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   width: 600px;
   height: 600px;
   background: var(--accent-color);
-  border-radius: 50%;           /* Makes it a circle */
-  opacity: 0.07;                /* Very transparent */
+  border-radius: 50%;
+  opacity: 0.07;
 }
 
-/* Decorative white circle in bottom-left corner */
 .hero-banner::after {
   content: '';
   position: absolute;
@@ -215,7 +161,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   opacity: 0.03;
 }
 
-/* Hero heading – large, bold, uppercase */
 .hero-banner h1 {
   font-size: 3.5rem;
   font-weight: 900;
@@ -225,21 +170,19 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   line-height: 1.1;
 }
 
-/* Hero subtitle paragraph – centered with max-width to keep it narrow */
 .hero-banner p {
   font-size: 1.15rem;
   opacity: 0.7;
-  max-width: 500px;             /* Prevents text from stretching too wide */
-  margin: 0 auto 2rem auto;     /* auto left/right = centers the block */
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
   text-align: center;
 }
 
-/* "Shop Now" button in the hero – red with rounded pill shape */
 .btn-hero {
   background: var(--accent-color);
   color: var(--white);
   padding: 0.9rem 2.5rem;
-  border-radius: 50px;          /* Pill-shaped rounded corners */
+  border-radius: 50px;
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -248,7 +191,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   transition: var(--transition);
 }
 
-/* Button hover – lifts up slightly and adds red glow shadow */
 .btn-hero:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
@@ -257,11 +199,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   5. SECTION TITLES
-   Reusable centered section headers used across multiple pages
-   (Featured Products, Product Categories, etc.)
-   ============================================================ */
+/* 5. SECTION TITLES */
 .section-padding { padding: 5rem 0; }
 
 .section-title {
@@ -282,7 +220,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   margin-top: 0.5rem;
 }
 
-/* Red underline bar under section titles */
 .section-title .underline {
   width: 50px;
   height: 3px;
@@ -291,14 +228,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   6. PRODUCT CARDS
-   Used on products.html (12-product grid) and index.html
-   (3 featured products). Each card has: image, badge, name,
-   description, price, and action buttons.
-   ============================================================ */
-
-/* .product-card – Base card with shadow, no border, rounded corners */
+/* 6. PRODUCT CARDS */
 .product-card {
   border: none;
   border-radius: var(--border-radius);
@@ -309,31 +239,26 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   background: var(--white);
 }
 
-/* Card lifts up on hover with a larger shadow */
 .product-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
-/* Product image – fixed height with object-fit to prevent stretching */
 .product-card .card-img-top {
   height: 220px;
-  object-fit: cover;            /* Crops image to fill area without distortion */
+  object-fit: cover;
   transition: var(--transition);
 }
 
-/* Image zooms in slightly on card hover */
 .product-card:hover .card-img-top { transform: scale(1.05); }
 
-/* Wrapper clips the zoomed image so it doesn't overflow the card */
 .product-card .card-img-wrapper {
   overflow: hidden;
-  position: relative;           /* Needed for absolute-positioned badges */
+  position: relative;
 }
 
 .product-card .card-body { padding: 1.2rem; }
 
-/* Product name – small, bold, uppercase */
 .product-card .card-title {
   font-size: 0.95rem;
   font-weight: 700;
@@ -343,21 +268,18 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   color: var(--dark-color);
 }
 
-/* Short product description – lighter gray text */
 .product-card .card-text {
   font-size: 0.85rem;
   color: var(--text-light);
   margin-bottom: 0.7rem;
 }
 
-/* Price text – large and bold */
 .product-card .price {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 
-/* Strikethrough "before" price for sale items */
 .product-card .price .original-price {
   text-decoration: line-through;
   color: var(--text-light);
@@ -366,7 +288,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   margin-right: 6px;
 }
 
-/* Buttons inside product cards – pill-shaped, small */
 .product-card .btn {
   border-radius: 50px;
   padding: 0.4rem 1.2rem;
@@ -377,15 +298,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   7. CUSTOM BUTTONS
-   Three button styles used throughout the site:
-   - btn-primary-custom: Dark filled button
-   - btn-outline-custom: Dark bordered button (transparent fill)
-   - btn-accent-custom: Red filled button (for checkout, etc.)
-   ============================================================ */
-
-/* Dark filled button – used for "View Details" */
+/* 7. CUSTOM BUTTONS */
 .btn-primary-custom {
   background: var(--primary-color);
   color: var(--white);
@@ -398,7 +311,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   color: var(--white);
 }
 
-/* Outlined button – used for "Add to Cart" */
 .btn-outline-custom {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
@@ -410,7 +322,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   color: var(--white);
 }
 
-/* Red accent button – used for "Proceed to Checkout" */
 .btn-accent-custom {
   background: var(--accent-color);
   color: var(--white);
@@ -424,13 +335,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   8. CATEGORY CARDS
-   The 4 category boxes on the homepage (Running, Lifestyle,
-   Basketball, Training). Each has an icon, name, and count.
-   ============================================================ */
-
-/* .category-card – White card with shadow, centered text */
+/* 8. CATEGORY CARDS */
 .category-card {
   border: none;
   border-radius: var(--border-radius);
@@ -447,7 +352,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   box-shadow: var(--shadow-lg);
 }
 
-/* Circular icon wrapper – gray background, centers the Bootstrap icon */
 .category-card .icon-wrapper {
   width: 70px;
   height: 70px;
@@ -460,19 +364,16 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   transition: var(--transition);
 }
 
-/* Icon wrapper turns dark on hover */
 .category-card:hover .icon-wrapper {
   background: var(--primary-color);
 }
 
-/* Bootstrap icon inside the wrapper */
 .category-card .icon-wrapper i {
   font-size: 1.6rem;
   color: var(--primary-color);
   transition: var(--transition);
 }
 
-/* Icon turns white when wrapper turns dark */
 .category-card:hover .icon-wrapper i { color: var(--white); }
 
 .category-card h5 {
@@ -483,12 +384,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   9. PROMO BANNER
-   The red "Up to 40% Off" section on the homepage.
-   ============================================================ */
-
-/* .promo-banner – Red background, relative for decorative text */
+/* 9. PROMO BANNER */
 .promo-banner {
   background: var(--accent-color);
   color: var(--white);
@@ -497,19 +393,18 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   overflow: hidden;
 }
 
-/* Giant faded "YOU CAN DO IT" watermark text behind the content */
 .promo-banner::before {
   content: 'YOU CAN DO IT';
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);  /* Centers it perfectly */
+  transform: translate(-50%, -50%);
   font-size: 8rem;
   font-weight: 900;
-  opacity: 0.1;               /* Very transparent so content is readable */
-  white-space: nowrap;         /* Prevents text from wrapping */
+  opacity: 0.1;
+  white-space: nowrap;
   text-transform: uppercase;
-  pointer-events: none;        /* Allows clicks to pass through to buttons */
+  pointer-events: none;
 }
 
 .promo-banner h2 {
@@ -519,7 +414,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   letter-spacing: -1px;
 }
 
-/* White button inside the promo banner */
 .promo-banner .btn-accent {
   background: var(--white);
   color: var(--primary-color);
@@ -539,21 +433,13 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   10. FOOTER
-   The dark footer at the bottom of every page. Contains:
-   brand info + social icons, Quick Links, and Contact Info.
-   Uses the same HTML structure across all 6 pages.
-   ============================================================ */
-
-/* .site-footer – Dark background with white text */
+/* 10. FOOTER */
 .site-footer {
   background: #111111;
   color: var(--white);
   padding: 4rem 0 0;
 }
 
-/* Footer headings (Quick Links, Contact Info) */
 .site-footer h5 {
   color: var(--white);
   font-weight: 800;
@@ -563,13 +449,11 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   font-size: 0.95rem;
 }
 
-/* Footer paragraph text (brand description) */
 .site-footer p {
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.7;
 }
 
-/* Footer links – slightly transparent white */
 .site-footer a {
   color: rgba(255, 255, 255, 0.75);
   transition: var(--transition);
@@ -578,7 +462,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 
 .site-footer a:hover { color: var(--white); }
 
-/* Unstyled list for footer links */
 .site-footer ul {
   list-style: none;
   padding: 0;
@@ -594,13 +477,11 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   transition: var(--transition);
 }
 
-/* Links slide 4px to the right on hover */
 .site-footer ul li a:hover {
   color: var(--white);
   transform: translateX(4px);
 }
 
-/* Copyright bar at the very bottom */
 .footer-bottom {
   background: rgba(0, 0, 0, 0.3);
   padding: 1.5rem 0;
@@ -613,7 +494,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   margin: 0;
 }
 
-/* Social media icon circles (Facebook, Instagram, etc.) */
 .social-icons a {
   display: inline-flex;
   align-items: center;
@@ -627,20 +507,13 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   transition: var(--transition);
 }
 
-/* Social icons turn red and float up on hover */
 .social-icons a:hover {
   background: var(--accent-color);
   transform: translateY(-3px);
 }
 
 
-/* ============================================================
-   11. PRODUCT DETAILS PAGE
-   Styles for the single product view (product-details.html)
-   including the image, info section, and ratings.
-   ============================================================ */
-
-/* Product image container – rounded corners with shadow */
+/* 11. PRODUCT DETAILS */
 .product-detail-img {
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -649,30 +522,22 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 
 .product-detail-img img { width: 100%; height: auto; }
 
-/* Product name on details page – large, bold, uppercase */
 .product-info h1 {
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
 }
 
-/* Price on details page – larger than card price */
 .product-info .price {
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--primary-color);
 }
 
-/* Star rating icons – filled stars use accent (red) color */
 .rating .bi-star-fill { color: var(--accent-color); }
 
 
-/* ============================================================
-   12. CART PAGE
-   Styles for the shopping cart table and order summary.
-   ============================================================ */
-
-/* Cart table container – white card with shadow */
+/* 12. CART PAGE */
 .cart-table {
   background: var(--white);
   border-radius: var(--border-radius);
@@ -680,13 +545,11 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   box-shadow: var(--shadow);
 }
 
-/* Table header – dark background with white text */
 .cart-table thead {
   background: var(--primary-color);
   color: var(--white);
 }
 
-/* Order summary sidebar – light gray background */
 .cart-summary {
   background: var(--gray-bg);
   border-radius: var(--border-radius);
@@ -694,12 +557,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   13. ABOUT PAGE
-   Styles for the About hero section and team member cards.
-   ============================================================ */
-
-/* About hero – dark gradient background */
+/* 13. ABOUT PAGE */
 .about-hero {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--white);
@@ -712,22 +570,16 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   text-transform: uppercase;
 }
 
-/* Team member profile photo – circular with red border */
 .team-card {
   width: 120px;
   height: 120px;
-  border-radius: 50%;          /* Makes it a circle */
-  object-fit: cover;           /* Crops to fill without distortion */
+  border-radius: 50%;
+  object-fit: cover;
   border: 3px solid var(--accent-color);
 }
 
 
-/* ============================================================
-   14. CONTACT PAGE
-   Styles for the contact form and the dark info card.
-   ============================================================ */
-
-/* Contact form – white card with shadow */
+/* 14. CONTACT PAGE */
 .contact-form {
   background: var(--white);
   border-radius: var(--border-radius);
@@ -735,7 +587,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   box-shadow: var(--shadow);
 }
 
-/* Contact info card – dark background, white text */
 .contact-info-card {
   background: var(--primary-color);
   color: var(--white);
@@ -755,30 +606,20 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 .contact-info-card a:hover { color: var(--accent-color); }
 
 
-/* ============================================================
-   15. OFFCANVAS MOBILE MENU
-   The slide-in menu that appears on mobile when the hamburger
-   icon is tapped. Uses Bootstrap's offcanvas component.
-   ============================================================ */
-
-/* Narrower than Bootstrap's default 350px */
+/* 15. OFFCANVAS MOBILE MENU */
 .offcanvas { max-width: 300px; }
 
-/* Dark header with logo and close button */
 .offcanvas-header {
   background: var(--primary-color);
   color: var(--white);
 }
 
-/* Make the X close button white (inverted from default dark) */
 .offcanvas-header .btn-close { filter: invert(1); }
 
-/* Logo text in offcanvas header – forced white */
 .offcanvas-title {
   color: var(--white) !important;
 }
 
-/* Offcanvas nav links – white text, uppercase, with bottom border */
 .offcanvas-body .nav-link {
   color: var(--white) !important;
   font-weight: 600;
@@ -789,17 +630,10 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   border-bottom: 1px solid #333;
 }
 
-/* Links turn red on hover */
 .offcanvas-body .nav-link:hover { color: var(--accent-color) !important; }
 
 
-/* ============================================================
-   16. BADGES
-   Small labels on product cards showing "Sale", "New", or
-   discount percentages like "-40%".
-   ============================================================ */
-
-/* Red sale/discount badge */
+/* 16. BADGES */
 .badge-sale {
   background: var(--accent-color);
   color: var(--white);
@@ -811,7 +645,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   letter-spacing: 0.5px;
 }
 
-/* Dark "New" badge */
 .badge-new {
   background: var(--primary-color);
   color: var(--white);
@@ -824,12 +657,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-   17. PAGINATION
-   Page numbers at the bottom of the products page.
-   ============================================================ */
-
-/* Individual page link buttons */
+/* 17. PAGINATION */
 .pagination .page-link {
   color: var(--primary-color);
   border-radius: 4px;
@@ -838,7 +666,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   border: 1px solid #ddd;
 }
 
-/* Active page – dark filled background */
 .pagination .page-item.active .page-link {
   background: var(--primary-color);
   border-color: var(--primary-color);
@@ -846,11 +673,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-  18. SCROLL TO TOP BUTTON
-  A circular button fixed to the bottom-right corner that
-  appears after scrolling down 300px.
-   ============================================================ */
+/* 18. SCROLL TO TOP */
 .scroll-top {
   position: fixed;
   bottom: 30px;
@@ -860,14 +683,14 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   background: var(--primary-color);
   color: var(--white);
   border: none;
-  border-radius: 50%;           /* Circular button */
-  display: none;                /* Hidden by default, shown via JS */
+  border-radius: 50%;
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
-  z-index: 999;                 /* Sits above other elements */
+  z-index: 999;
 }
 
 .scroll-top:hover {
@@ -876,13 +699,7 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-  19. QUANTITY CONTROLS
-  The +/- buttons and number input in the cart table for
-  adjusting product quantities.
-   ============================================================ */
-
-/* Container for minus button, input, and plus button */
+/* 19. QUANTITY CONTROLS */
 .quantity-control {
   display: inline-flex;
   align-items: center;
@@ -891,7 +708,6 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   overflow: hidden;
 }
 
-/* Minus and Plus buttons */
 .quantity-control button {
   width: 36px;
   height: 36px;
@@ -903,13 +719,11 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
   transition: var(--transition);
 }
 
-/* Button hover turns dark with white text */
 .quantity-control button:hover {
   background: var(--primary-color);
   color: var(--white);
 }
 
-/* Number input – no border, centered text */
 .quantity-control input {
   width: 50px;
   height: 36px;
@@ -919,87 +733,60 @@ img { max-width: 100%; height: auto; } /* Make all images responsive */
 }
 
 
-/* ============================================================
-  20. ACCORDION
-  Used on the About page for the "Our Values" section
-  (Performance, Innovation, Community).
-   ============================================================ */
-
-/* Accordion button text – white by default */
+/* 20. ACCORDION */
 .accordion-button {
   color: var(--white);
 }
 
-/* Chevron arrow icon – inverted to white */
 .accordion-button::after {
   filter: invert(1);
 }
 
-/* When section is expanded (not collapsed) */
 .accordion-button:not(.collapsed) {
   background: rgba(255, 255, 255, 0.08);
-  color: var(--accent-color);    /* Red text when expanded */
+  color: var(--accent-color);
 }
 
-/* Expanded chevron – stays white */
 .accordion-button:not(.collapsed)::after {
   filter: invert(1) hue-rotate(0deg);
 }
 
-/* Red focus ring when clicking the accordion button */
 .accordion-button:focus {
   box-shadow: 0 0 0 0.25rem rgba(229, 57, 53, 0.2);
 }
 
 
-/* ============================================================
-  21. FORM STYLES
-  Custom focus states for form inputs (used on contact page).
-   ============================================================ */
+/* 21. FORM STYLES */
 .form-control:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(17, 17, 17, 0.15);
 }
 
 
-/* ============================================================
-  22. TOAST NOTIFICATIONS
-  The small popup notifications that appear when items are
-  added/removed from the cart.
-   ============================================================ */
+/* 22. TOAST NOTIFICATIONS */
 .toast-container {
   position: fixed;
-  top: 80px;                    /* Below the navbar */
-  right: 20px;                  /* Right side of screen */
-  z-index: 1050;                /* Above most other elements */
+  top: 80px;
+  right: 20px;
+  z-index: 1050;
 }
 
 
-/* ============================================================
-  23. RESPONSIVE MEDIA QUERIES
-  Adjusts sizes and spacing for tablets and phones.
-   ============================================================ */
-
-/* Tablet and below (max-width: 768px) */
+/* 23. RESPONSIVE */
 @media (max-width: 768px) {
-  .hero-banner h1 { font-size: 2.2rem; }       /* Smaller heading */
-  .hero-banner { padding: 3.5rem 0; }          /* Less vertical padding */
-  .section-padding { padding: 3rem 0; }         /* Tighter sections */
-  .section-title h2 { font-size: 1.5rem; }     /* Smaller section titles */
+  .hero-banner h1 { font-size: 2.2rem; }
+  .hero-banner { padding: 3.5rem 0; }
+  .section-padding { padding: 3rem 0; }
+  .section-title h2 { font-size: 1.5rem; }
 }
 
-/* Mobile phones (max-width: 576px) */
 @media (max-width: 576px) {
-  .hero-banner h1 { font-size: 1.8rem; }       /* Even smaller heading */
-  .product-card .card-img-top { height: 180px; } /* Shorter product images */
+  .hero-banner h1 { font-size: 1.8rem; }
+  .product-card .card-img-top { height: 180px; }
 }
 
 
-/* ============================================================
-    UTILITY CLASSES
-   ============================================================ */
-
-/* Red accent color – used for "S" in KICKS logo and highlights */
+/* UTILITY */
 .brand-accent {
   color: var(--accent-color);
 }

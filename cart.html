@@ -4,52 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KICKS - Shopping Bag</title>
-  <!-- Bootstrap 5.3.3 CSS: Core framework providing grid system, components, and utilities -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons: Icon font library used for bi-* icons throughout the page -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- ========== NAVBAR ========== -->
-  <!-- navbar-expand-lg: Collapses navbar below the lg breakpoint (992px) for mobile -->
-  <!-- sticky-top: Keeps navbar fixed at the top when scrolling -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
-      <!-- navbar-toggler: Hamburger button that toggles the offcanvas mobile menu on small screens -->
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- collapse navbar-collapse: Wraps nav links; hides them below lg breakpoint, shows on lg+ -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <!-- mx-auto: Centers nav items horizontally; mb-lg-0 removes bottom margin on large screens -->
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <!-- position-relative: Enables absolute-positioned cart badge overlay; fs-5 scales icon size -->
         <a href="cart.html" class="position-relative text-decoration-none cart-icon-link active"><i class="bi bi-bag fs-5"></i><span class="cart-badge">3</span></a>
       </div>
     </div>
   </nav>
 
   <!-- ========== OFFCANVAS MOBILE MENU ========== -->
-  <!-- offcanvas: Bootstrap slide-in panel for mobile navigation -->
-  <!-- offcanvas-end: Slides in from the right side of the screen -->
   <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
-    <!-- offcanvas-header: Top section with title and close button -->
     <div class="offcanvas-header">
       <h5 class="offcanvas-title"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
-      <!-- btn-close-white: Renders the close button in white for dark backgrounds -->
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
-    <!-- offcanvas-body: Main content area of the slide-in panel -->
     <div class="offcanvas-body">
-      <!-- gap-3: Adds consistent spacing between nav items (1rem) -->
       <ul class="navbar-nav gap-3">
         <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-grid me-2"></i>Products</a></li>
@@ -62,22 +48,16 @@
 
   <!-- ========== PAGE TITLE SECTION ========== -->
   <div class="container mt-4 mb-5">
-    <!-- fw-bold: Sets font-weight to bold; text-center: Centers text horizontally -->
     <h2 class="fw-bold text-center"><i class="bi bi-bag-fill me-2"></i>SHOPPING BAG</h2>
   </div>
 
   <!-- ========== MAIN CART CONTENT ========== -->
-  <!-- pb-5: Adds padding-bottom (3rem) to separate content from footer -->
   <div class="container pb-5">
-    <!-- row g-4: Creates a grid row with gutters (g-4 = 1.5rem gap between columns) -->
     <div class="row g-4">
 
       <!-- ========== LEFT COLUMN: CART TABLE ========== -->
-      <!-- col-lg-8: Takes 8 of 12 columns on large screens (66% width), full-width on smaller screens -->
       <div class="col-lg-8">
-        <!-- table-responsive: Makes table horizontally scrollable on small screens -->
         <div class="table-responsive cart-table">
-          <!-- table align-middle: Bootstrap table with vertically centered cell content -->
           <table class="table align-middle">
             <thead class="bg-black text-white">
               <tr>
@@ -92,10 +72,8 @@
               <!-- Row 1 -->
               <tr>
                 <td>
-                  <!-- d-flex: Enables flexbox layout; align-items-center: Vertically centers items; gap-3: 1rem spacing -->
                   <div class="d-flex align-items-center gap-3">
                     <div class="product-icon bg-light rounded p-2">
-                      <!-- fs-3: Font-size scale 3 (1.75rem); text-dark: Bootstrap dark text color -->
                       <i class="bi bi-shoe fs-3 text-dark"></i>
                     </div>
                     <span class="fw-semibold">Air Max Pulse</span>
@@ -105,14 +83,12 @@
                 <td>
                   <div class="quantity-control d-flex align-items-center">
                     <button class="btn btn-sm btn-outline-dark" type="button">-</button>
-                    <!-- form-control: Styled input with borders and focus states; form-control-sm: Smaller variant; mx-2: Horizontal margin (0.5rem) -->
                     <input type="number" class="form-control form-control-sm mx-2 text-center" value="2" min="1" style="width: 60px;">
                     <button class="btn btn-sm btn-outline-dark" type="button">+</button>
                   </div>
                 </td>
                 <td class="fw-bold">&#8369;14,990</td>
                 <td class="text-center">
-                  <!-- btn-outline-danger: Red outlined button that fills red on hover -->
                   <button class="btn btn-sm btn-outline-danger" title="Remove">
                     <i class="bi bi-trash-fill"></i>
                   </button>
@@ -171,7 +147,6 @@
             </tbody>
           </table>
         </div>
-        <!-- justify-content-between: Pushes children to opposite ends of the flex container -->
         <div class="d-flex justify-content-between mt-3">
           <a href="products.html" class="btn btn-outline-custom">
             <i class="bi bi-arrow-left me-1"></i> Continue Shopping
@@ -183,16 +158,12 @@
       </div>
 
       <!-- ========== RIGHT COLUMN: ORDER SUMMARY ========== -->
-      <!-- col-lg-4: Takes 4 of 12 columns on large screens (33% width) -->
       <div class="col-lg-4">
-        <!-- card: Bootstrap card component for grouped content; border-0: No border; shadow-sm: Subtle shadow -->
         <div class="card border-0 shadow-sm">
-          <!-- card-header: Top section of the card; py-3: Vertical padding (1rem) -->
           <div class="card-header bg-black text-center py-3">
             <h5 class="mb-0 fw-bold text-white">ORDER SUMMARY</h5>
           </div>
           <div class="card-body">
-            <!-- justify-content-between: Space-between alignment for label-value pairs -->
             <div class="d-flex justify-content-between mb-2">
               <span class="text-muted">Subtotal</span>
               <span id="cart-subtotal" class="fw-bold">&#8369;29,480</span>
@@ -203,16 +174,13 @@
             </div>
             <hr>
             <div class="d-flex justify-content-between mb-3">
-              <!-- fs-5: Font-size scale 5 (1.25rem) for slightly larger text -->
               <span class="fs-5 fw-bold">Total</span>
               <span id="cart-total" class="fs-5 fw-bold brand-accent">&#8369;29,480</span>
             </div>
-            <!-- w-100: Sets width to 100%; py-2: Vertical padding (0.5rem) -->
             <button id="checkout-btn" class="btn btn-accent-custom w-100 py-2 fw-bold">
               <i class="bi bi-credit-card me-2"></i>PROCEED TO CHECKOUT
             </button>
             <div class="text-center mt-3">
-              <!-- small: Bootstrap utility for smaller font size; text-muted: Gray muted text -->
               <small class="text-muted">
                 <i class="bi bi-truck me-1"></i>Free shipping on orders over &#8369;5,000
               </small>
@@ -225,11 +193,9 @@
   </div>
 
   <!-- ========== FOOTER ========== -->
-  <!-- site-footer: Custom class; py-5: Vertical padding (3rem); bg-dark: Dark background -->
   <footer class="site-footer py-5 bg-dark text-white">
     <div class="container">
       <div class="row">
-        <!-- col-lg-4 col-md-6 mb-4: 4 cols on large, 6 on medium (50%), with bottom margin -->
         <div class="col-lg-4 col-md-6 mb-4">
           <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
           <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
@@ -241,7 +207,6 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <h5 class="fw-bold mb-3">Quick Links</h5>
-          <!-- list-unstyled: Removes default list bullet/number styling -->
           <ul class="list-unstyled footer-links">
             <li class="mb-2"><a href="index.html">Home</a></li>
             <li class="mb-2"><a href="products.html">Products</a></li>
@@ -259,17 +224,13 @@
           </ul>
         </div>
       </div>
-      <!-- border-secondary: Light gray horizontal rule separator -->
       <hr class="border-secondary">
       <p class="text-center text-secondary small mb-0">&copy; 2026 KICKS. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- ========== TOAST NOTIFICATION ========== -->
-  <!-- toast-container: Bootstrap container for positioning toast notifications -->
-  <!-- position-fixed bottom-0 end-0: Pins toast to bottom-right corner of viewport -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <!-- toast: Bootstrap toast component for lightweight notifications -->
     <div id="cartToast" class="toast" role="alert">
       <div class="toast-header bg-black text-white">
         <i class="bi bi-bag-fill me-2"></i>
@@ -287,7 +248,6 @@
     <i class="bi bi-arrow-up"></i>
   </button>
 
-  <!-- Bootstrap JS Bundle: Includes Popper.js needed for dropdowns, tooltips, and offcanvas -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>

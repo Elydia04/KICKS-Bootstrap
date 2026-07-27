@@ -4,36 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KICKS - Premium Sneakers & Footwear</title>
-    <!-- Bootstrap 5.3.3 CSS: grid system, components (navbar, cards, offcanvas), utilities (spacing, flex, display) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons: scalable icon font used via bi-* classes (bi-bag, bi-house-door, etc.) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom CSS: project-specific styles (colors, animations, custom component classes) -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- ======================== NAVIGATION BAR ======================== -->
-    <!-- Navbar: Bootstrap's responsive navigation bar component -->
-    <!-- .navbar-expand-lg: horizontal nav on lg+ screens, toggler button on smaller -->
-    <!-- .navbar-dark: white text on dark background; .sticky-top: sticks to viewport top on scroll -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <!-- .container: Bootstrap responsive container, max-width 1140px, auto-centered -->
         <div class="container">
-            <!-- .navbar-brand: Styles the logo/brand link with larger font -->
             <a class=" navbar-brand" href="index.html"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
-            <!-- .navbar-toggler: hamburger menu button; .border-0: removes default border -->
-            <!-- data-bs-toggle="offcanvas": triggers Bootstrap offcanvas plugin for mobile menu -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- .collapse navbar-collapse: collapsible area that hides/shows nav links at lg breakpoint -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- .navbar-nav: vertical spacing for nav items; .mx-auto: centers links horizontally -->
-                <!-- .mb-2.mb-lg-0: margin-bottom on mobile, none on lg+ (prevents overlap with toggler) -->
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <!-- .nav-link.active: highlights current page; aria-current="page" for accessibility -->
                         <a class="nav-link active " aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
@@ -46,10 +32,7 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <!-- .position-relative: positions badge absolutely relative to this element -->
-                <!-- .text-decoration-none: removes default underline from link -->
                 <a href="cart.html" class="position-relative text-decoration-none cart-icon-link">
-                    <!-- .fs-5: Bootstrap font-size utility, sets font-size to 1.25rem -->
                     <i class="bi bi-bag fs-5"></i>
                     <span class="cart-badge">0</span>
                 </a>
@@ -58,19 +41,14 @@
     </nav>
 
     <!-- ======================== OFFCANVAS MOBILE MENU ======================== -->
-    <!-- Offcanvas: Bootstrap slide-out panel, triggered by the navbar-toggler above -->
-    <!-- .offcanvas-end: slides in from the right; .bg-dark .text-white: dark theme -->
     <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white" id="mobileMenuLabel"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
-            <!-- .btn-close-white: white X icon for dark backgrounds -->
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <!-- .gap-3: Bootstrap gap utility, adds 1rem spacing between flex/grid children -->
             <ul class="navbar-nav gap-3">
                 <li class="nav-item">
-                    <!-- .me-2: margin-end (right) 0.5rem, adds space between icon and text -->
                     <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a>
                 </li>
                 <li class="nav-item">
@@ -90,24 +68,12 @@
     </div>
 
     <!-- ======================== HERO BANNER ======================== -->
-    <!-- Hero: full-width intro banner with centered call-to-action -->
-    <!-- .d-flex: display flex; .align-items-center + .justify-content-center: centers content vertically & horizontally -->
-    <!-- .text-center: center-aligns text; .text-white: white text color -->
     <section class="hero-banner d-flex align-items-center justify-content-center text-center text-white">
-        <!-- .py-5: padding-top and padding-bottom (3rem each) -->
         <div class="container py-5">
-            <!-- .justify-content-center: centers the column within the row -->
             <div class="row justify-content-center">
-                <!-- .col-lg-8: 8 out of 12 columns wide on large screens, full-width on smaller -->
                 <div class="col-lg-8">
-                    <!-- .display-2: large heading style; .fw-black: font-weight 900 (extra bold) -->
-                    <!-- .text-uppercase: transforms text to uppercase; .mb-3: margin-bottom 1rem -->
                     <h1 class="display-2 fw-black text-uppercase mb-3">Find Your Perfect Kicks</h1>
-                    <!-- .lead: Bootstrap class that makes paragraph text slightly larger and lighter -->
-                    <!-- .mb-4: margin-bottom 1.5rem -->
                     <p class="lead mb-4">Premium sneakers and footwear for every stride. Step up your game.</p>
-                    <!-- .btn-lg: larger button size; .px-5: padding-left/right 3rem; .py-3: padding-top/bottom 1rem -->
-                    <!-- .fw-bold: font-weight 700; btn-hero: custom CSS class for gradient/style -->
                     <a href="products.html" class="btn btn-hero btn-lg px-5 py-3 text-uppercase fw-bold">Shop Now</a>
                 </div>
             </div>
@@ -115,42 +81,27 @@
     </section>
 
     <!-- ======================== FEATURED PRODUCTS ======================== -->
-    <!-- Section: displays 3 featured product cards in a responsive grid -->
     <section class="featured-products py-5" id="products">
         <div class="container">
-            <!-- .text-center: centers the heading; .mb-5: margin-bottom 3rem -->
             <div class="text-center mb-5">
                 <h2 class="fw-bold text-uppercase">Featured Products</h2>
-                <!-- .w-25: width 25%; .mx-auto: auto left/right margins = centering; .border-danger: red border -->
-                <!-- .border-2: 2px border thickness -->
                 <hr class="w-25 mx-auto border-danger border-2">
             </div>
-            <!-- .g-4: grid gutter (gap) of 1.5rem between columns; .justify-content-center: centers the row -->
             <div class="row g-4 justify-content-center">
 
                 <!-- ======================== PRODUCT CARD 1 ======================== -->
-                <!-- .col-lg-4: 4/12 columns on large screens (3 cards per row) -->
-                <!-- .col-md-6: 6/12 columns on medium screens (2 cards per row) -->
                 <div class="col-lg-4 col-md-6">
-                    <!-- .card: Bootstrap card component; .h-100: full height of parent; .product-card: custom class -->
                     <div class="card h-100 product-card">
                         <div class="card-img-wrapper">
                             <img src="images/product-images/air-max-pulse.jpg" class="card-img-top" alt="Air Max Pulse">
-                            <!-- .badge: Bootstrap badge component for labels; .badge-sale: custom sale badge style -->
-                            <!-- .position-absolute: positions element absolutely; .top-0.start-0: top-left corner -->
                             <span class="badge badge-sale position-absolute top-0 start-0 m-2">-40%</span>
                             <span class="badge badge-sale position-absolute top-0 m-2" style="left: 55px;">HOT</span>
                         </div>
-                        <!-- .card-body: padding wrapper for card content -->
-                        <!-- .d-flex .flex-column: flexbox column layout, lets mt-auto push buttons to bottom -->
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Air Max Pulse</h5>
                             <p class="card-text text-muted">Lightweight cushioning meets bold design</p>
                             <p class="price"><span class="original-price">&#8369;12,495.00</span> &#8369;7,495.00</p>
-                            <!-- .mt-auto: margin-top auto, pushes this div to the bottom of the flex column -->
-                            <!-- .d-flex .gap-2: flexbox with 0.5rem gap between buttons -->
                             <div class="mt-auto d-flex gap-2">
-                                <!-- .flex-fill: flex: 1 1 auto - makes button take equal available width -->
                                 <a href="product-details.html" class="btn btn-outline-dark flex-fill">View Details</a>
                                 <button class="btn btn-add-cart btn-outline-dark flex-fill" data-name="Air Max Pulse" data-price="7495">Add to Cart</button>
                             </div>
@@ -163,13 +114,11 @@
                     <div class="card h-100 product-card">
                         <div class="card-img-wrapper">
                             <img src="images/product-images/ultraboost-23.jpg" class="card-img-top" alt="Ultraboost 23">
-                            <!-- .bg-success: green background for "New" badge -->
                             <span class="badge bg-success position-absolute top-0 start-0 m-2">New</span>
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Ultraboost 23</h5>
                             <p class="card-text text-muted">Energy return for your daily runs</p>
-                            <!-- .fw-bold: bold text; .text-danger: red text; .fs-5: font-size 1.25rem -->
                             <p class="fw-bold text-danger fs-5 mb-3">₱8,995</p>
                             <div class="mt-auto d-flex gap-2">
                                 <a href="product-details.html" class="btn btn-outline-dark flex-fill">View Details</a>
@@ -189,7 +138,6 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Classic Leather Pro</h5>
                             <p class="card-text text-muted">Timeless style, modern comfort</p>
-                            <!-- .fs-5: font-size 1.25rem; .mb-3: margin-bottom 1rem -->
                             <p class="fw-bold text-danger fs-5 mb-3">₱5,495</p>
                             <div class="mt-auto d-flex gap-2">
                                 <a href="product-details.html" class="btn btn-outline-dark flex-fill">View Details</a>
@@ -204,24 +152,17 @@
     </section>
 
     <!-- ======================== PRODUCT CATEGORIES ======================== -->
-    <!-- Section: 4 category cards displayed in a responsive grid -->
-    <!-- .bg-light: Bootstrap light gray background utility -->
     <section class="categories py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold text-uppercase">Shop by Category</h2>
                 <hr class="w-25 mx-auto border-danger border-2">
             </div>
-            <!-- .g-4: 1.5rem gutter between grid columns -->
             <div class="row g-4 justify-content-center">
 
                 <!-- ======================== CATEGORY: RUNNING ======================== -->
-                <!-- .col-lg-3: 3/12 columns on large screens (4 per row); .col-md-6: 2 per row on medium -->
                 <div class="col-lg-3 col-md-6">
-                    <!-- .category-card: custom CSS class; .p-4: padding 1.5rem all sides -->
-                    <!-- .rounded-3: border-radius 1rem; .h-100: full height of parent row -->
                     <div class="category-card text-center p-4 rounded-3 h-100">
-                        <!-- .display-1: largest Bootstrap display heading (font-size ~5rem) -->
                         <i class="bi bi-lightning-charge display-1 text-danger mb-3"></i>
                         <h5 class="fw-bold">Running</h5>
                         <p class="text-muted mb-0">25+ Products</p>
@@ -260,15 +201,12 @@
     </section>
 
     <!-- ======================== PROMOTIONAL BANNER ======================== -->
-    <!-- Promo Banner: full-width call-to-action section for current sale -->
     <section class="promo-banner py-5">
         <div class="container text-center text-white">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <!-- .display-3: large display heading (~3.5rem); .fw-black: extra bold (weight 900) -->
                     <h2 class="display-3 fw-black text-uppercase mb-3">Up to 40% Off</h2>
                     <p class="lead mb-4">New season styles just dropped. Don't miss out.</p>
-                    <!-- .btn-light: white button; .btn-lg: large size; .px-5.py-3: generous padding -->
                     <a href="products.html" class="btn btn-light btn-lg px-5 py-3 text-uppercase fw-bold">Shop the Sale</a>
                 </div>
             </div>
@@ -276,21 +214,13 @@
     </section>
 
     <!-- ======================== FOOTER ======================== -->
-    <!-- Footer: site-wide footer with brand info, links, and contact details -->
-    <!-- .site-footer: custom class; .py-5: vertical padding 3rem; .bg-dark.text-white: dark theme -->
     <footer class="site-footer py-5 bg-dark text-white">
         <div class="container">
-            <!-- .row: Bootstrap flex-based grid row; columns split into 3 equal sections -->
             <div class="row">
-                <!-- .col-lg-4.col-md-6: 4/12 cols on large (3 cols per row), 6/12 on medium (2 per row) -->
-                <!-- .mb-4: margin-bottom 1.5rem (spacing between stacked columns on mobile) -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
-                    <!-- .text-secondary: muted gray text; .small: reduces font size -->
                     <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
-                    <!-- .d-flex .gap-3: flexbox row with 1rem gap between social icons -->
                     <div class="d-flex gap-3 mt-3">
-                        <!-- .fs-5: font-size 1.25rem applied to each icon link -->
                         <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
                         <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
@@ -298,7 +228,6 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
-                    <!-- .list-unstyled: removes default bullet points and padding from <ul> -->
                     <ul class="list-unstyled footer-links">
                         <li class="mb-2"><a href="index.html">Home</a></li>
                         <li class="mb-2"><a href="products.html">Products</a></li>
@@ -310,31 +239,24 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="fw-bold mb-3">Contact Info</h5>
                     <ul class="list-unstyled footer-contact">
-                        <!-- .me-2: margin-end 0.5rem, space between icon and text -->
                         <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Bagtas, Tanza, Cavite</li>
                         <li class="mb-2"><i class="bi bi-telephone me-2"></i>+63 917 555 0199</li>
                         <li class="mb-2"><i class="bi bi-envelope me-2"></i>support@kicks.com</li>
                     </ul>
                 </div>
             </div>
-            <!-- .border-secondary: gray horizontal rule to separate copyright from footer content -->
             <hr class="border-secondary">
-            <!-- .text-center: centered text; .small: smaller font; .mb-0: no bottom margin -->
             <p class="text-center text-secondary small mb-0">&copy; 2026 KICKS. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Toast Container: Bootstrap toast notifications appear here (e.g., "Added to cart") -->
     <div id="toast-container" class="toast-container"></div>
 
-    <!-- Scroll to Top Button: custom-styled button, shown/hidden via JavaScript on scroll -->
     <button class="scroll-top" aria-label="Scroll to top">
         <i class="bi bi-arrow-up"></i>
     </button>
 
-    <!-- Bootstrap 5.3.3 JS Bundle: includes Popper.js for tooltips, popovers, offcanvas, and collapse -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript: handles cart logic, scroll-to-top, toast notifications, etc. -->
     <script src="js/script.js"></script>
 </body>
 </html>

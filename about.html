@@ -4,49 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | KICKS</title>
-    <!-- Bootstrap 5.3.3 CSS: Core framework for grid, components, and utility classes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons: Font-based icon library for bi-* classes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- ========== NAVBAR ========== -->
-<!-- navbar-expand-lg: Collapses to toggler below 992px; sticky-top: Sticks navbar to viewport top on scroll -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
-        <!-- navbar-toggler: Hamburger menu button visible on screens < lg -->
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- collapse navbar-collapse: Responsive wrapper that hides/shows nav links based on breakpoint -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- mx-auto: Centers nav items; mb-lg-0: Removes bottom margin on large screens -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                 <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
-            <!-- position-relative: Enables absolute child positioning for cart badge; fs-5: Icon font-size scale -->
             <a href="cart.html" class="position-relative text-decoration-none cart-icon-link"><i class="bi bi-bag fs-5"></i><span class="cart-badge">0</span></a>
         </div>
     </div>
 </nav>
 
 <!-- ========== OFFCANVAS MOBILE MENU ========== -->
-<!-- offcanvas: Bootstrap slide-in panel component; offcanvas-end: Anchors to the right edge -->
 <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
-    <!-- offcanvas-header: Header area with title and close button -->
     <div class="offcanvas-header">
         <h5 class="offcanvas-title"><img src="images/KICKSLogo.png" alt="KICKS Logo" height="32"> KICK<span class="brand-accent">S</span></h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
     </div>
-    <!-- offcanvas-body: Scrollable content area of the slide-in panel -->
     <div class="offcanvas-body">
-        <!-- gap-3: Adds 1rem spacing between each nav link -->
         <ul class="navbar-nav gap-3">
             <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i>Home</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html"><i class="bi bi-grid me-2"></i>Products</a></li>
@@ -58,12 +47,9 @@
 </div>
 
 <!-- ========== ABOUT HERO SECTION ========== -->
-<!-- Full-width hero banner with dark background, white text, centered content, and vertical padding -->
 <section class="about-hero bg-black text-white text-center py-5">
     <div class="container py-5">
-        <!-- display-3: Extra large heading (3rem); fw-bold: Bold font weight -->
         <h1 class="display-3 fw-bold mb-3">ABOUT KICK<span class="brand-accent">S</span></h1>
-        <!-- lead: Slightly larger, muted paragraph text for emphasis -->
         <p class="lead text-secondary">Born to run. Built to last.</p>
     </div>
 </section>
@@ -72,14 +58,11 @@
 <section class="py-5 bg-dark">
     <div class="container">
         <h2 class="text-center fw-bold mb-5 text-white">OUR STORY</h2>
-        <!-- row align-items-center g-5: Grid row with 3rem gutters, vertically centered columns -->
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <!-- fs-5: Font-size scale 5 (1.25rem) for slightly larger body text -->
                 <p class="fs-5 text-white">KICKS was born in 2026 as a school project by a group of sneaker enthusiasts with a passion for premium, performance-driven footwear. What started as a class requirement quickly became a vision — combining cutting-edge technology with iconic design. Every pair we sell is crafted for those who refuse to compromise on style or comfort.</p>
             </div>
             <div class="col-lg-6 text-center">
-                <!-- img-fluid: Makes image responsive (max-width: 100%, height: auto); rounded: Adds border-radius -->
                 <img src="images/product-images/our-story.jpg" alt="Our Story" class="img-fluid rounded">
             </div>
         </div>
@@ -90,14 +73,10 @@
 <section class="py-5 bg-black">
     <div class="container">
         <h2 class="text-center fw-bold mb-5 text-white">MISSION & VISION</h2>
-        <!-- row g-4: Grid with 1.5rem gutters; columns stack on mobile, side-by-side on md+ -->
         <div class="row g-4">
-            <!-- col-md-6: Takes 50% width on medium screens and above, full-width on small screens -->
             <div class="col-md-6">
-                <!-- card h-100: Bootstrap card that stretches to fill full column height -->
                 <div class="card h-100 bg-dark border-secondary">
                     <div class="card-body text-center p-4">
-                        <!-- fs-1: Font-size scale 1 (2rem) for large icon; d-block: Makes element display as block -->
                         <i class="bi bi-bullseye brand-accent fs-1 mb-0 d-block"></i>
                         <h4 class="text-white fw-bold mb-3">Our Mission</h4>
                         <p class="text-secondary mb-0">To inspire and empower sneaker culture in the Philippines by providing premium, performance-driven footwear that blends cutting-edge technology with iconic style. We are committed to delivering exceptional quality, unmatched comfort, and a shopping experience that keeps our customers coming back for every stride.</p>
@@ -121,19 +100,14 @@
 <section class="py-5 bg-dark">
     <div class="container">
         <h2 class="text-center fw-bold mb-5 text-white">MEET THE TEAM</h2>
-        <!-- justify-content-center: Centers the grid columns horizontally within the row -->
         <div class="row g-4 justify-content-center">
-            <!-- col-lg-4 col-md-6: 33% width on large screens, 50% on medium, full-width on small -->
             <div class="col-lg-4 col-md-6">
-                <!-- card bg-black: Card with black background; h-100: Equal height cards in a row -->
                 <div class="card bg-black border-secondary text-center h-100">
                     <div class="card-body p-4">
-                        <!-- rounded-circle: Applies large border-radius to make the image circular -->
                         <img src="images/product-images/adrianprof.jpg" alt="Adrian Ortega" class="team-card img rounded-circle mb-3">
                         <h5 class="text-white fw-bold mb-1">Adrian Ortega</h5>
                         <p class="brand-accent mb-3">Lead Developer</p>
                         <p class="text-secondary small">Passionate about building seamless digital experiences that connect athletes with the perfect pair of kicks.</p>
-                        <!-- d-flex justify-content-center gap-3: Flex row centered with 1rem gap between social icons -->
                         <div class="d-flex justify-content-center gap-3">
                             <a href="https://www.facebook.com/adrian.ortega.964326" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
                             <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
@@ -180,28 +154,21 @@
 <section class="py-5 bg-black">
     <div class="container">
         <h2 class="text-center fw-bold mb-5 text-white">OUR VALUES</h2>
-        <!-- .accordion: Bootstrap accordion component for collapsible content panels -->
         <div class="accordion" id="valuesAccordion">
-            <!-- .accordion-item: Each collapsible panel; mb-3: Bottom margin between items -->
             <div class="accordion-item bg-dark border-secondary mb-3 rounded">
                 <h2 class="accordion-header">
-                    <!-- accordion-button: Toggle button; no 'collapsed' class means expanded by default -->
                     <button class="accordion-button bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#valuePerformance" aria-expanded="true">
                         <i class="bi bi-lightning-charge-fill brand-accent me-2"></i> PERFORMANCE
                     </button>
                 </h2>
-                <!-- accordion-collapse collapse show: Panel open by default via 'show' class; data-bs-parent groups items (only one open at a time) -->
                 <div id="valuePerformance" class="accordion-collapse collapse show" data-bs-parent="#valuesAccordion">
-                    <!-- accordion-body: Content area inside each collapsible panel -->
                     <div class="accordion-body text-white">
                         We push boundaries in footwear technology to deliver shoes that enhance your athletic performance.
                     </div>
                 </div>
             </div>
-            <!-- accordion-item: Second collapsible panel (collapsed by default) -->
             <div class="accordion-item bg-dark border-secondary mb-3 rounded">
                 <h2 class="accordion-header">
-                    <!-- accordion-button collapsed: Starts in collapsed (closed) state -->
                     <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#valueInnovation">
                         <i class="bi bi-cpu-fill brand-accent me-2"></i> INNOVATION
                     </button>
@@ -212,7 +179,6 @@
                     </div>
                 </div>
             </div>
-            <!-- accordion-item: Third collapsible panel -->
             <div class="accordion-item bg-dark border-secondary mb-3 rounded">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed bg-dark text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#valueCommunity">
@@ -230,15 +196,12 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
-<!-- site-footer: Custom class; py-5: Vertical padding (3rem); bg-dark: Dark background -->
 <footer class="site-footer py-5 bg-dark text-white">
     <div class="container">
         <div class="row">
-            <!-- col-lg-4 col-md-6 mb-4: 4 cols on large, 6 on medium, with bottom margin -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
                 <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
-                <!-- d-flex gap-3: Flex row with 1rem gap between social media icons -->
                 <div class="d-flex gap-3 mt-3">
                     <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
@@ -247,7 +210,6 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <h5 class="fw-bold mb-3">Quick Links</h5>
-                <!-- list-unstyled: Removes default list bullet/number styling -->
                 <ul class="list-unstyled footer-links">
                     <li class="mb-2"><a href="index.html">Home</a></li>
                     <li class="mb-2"><a href="products.html">Products</a></li>
@@ -271,8 +233,6 @@
 </footer>
 
 <!-- ========== TOAST CONTAINER ========== -->
-<!-- toast-container: Bootstrap container for positioning toast notifications -->
-<!-- position-fixed top-0 end-0: Pins toast to top-right corner of viewport -->
 <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
 
 <!-- ========== SCROLL TO TOP BUTTON ========== -->
@@ -280,7 +240,6 @@
     <i class="bi bi-arrow-up"></i>
 </button>
 
-<!-- Bootstrap JS Bundle: Includes Popper.js needed for dropdowns, tooltips, and offcanvas -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
