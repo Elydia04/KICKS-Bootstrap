@@ -376,11 +376,11 @@ img { max-width: 100%; height: auto; }
 }
 
 .promo-banner::before {
-  content: 'JUST DO IT';
+  content: 'YOU CAN DO IT';
   position: absolute;
-  right: -20px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   font-size: 8rem;
   font-weight: 900;
   opacity: 0.1;
