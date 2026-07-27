@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCartSummary() {
       const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const shipping = cart.length > 0 ? 99 : 0;
+      const shipping = subtotal >= 5000 ? 0 : (cart.length > 0 ? 99 : 0);
       const total = subtotal + shipping;
 
       const subtotalEl = document.getElementById('cart-subtotal');
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const totalEl = document.getElementById('cart-total');
 
       if (subtotalEl) subtotalEl.textContent = '₱' + subtotal.toFixed(2);
-      if (shippingEl) shippingEl.textContent = '₱' + shipping.toFixed(2);
+      if (shippingEl) shippingEl.textContent = shipping === 0 ? 'Free' : '₱' + shipping.toFixed(2);
       if (totalEl) totalEl.textContent = '₱' + total.toFixed(2);
     }
   }

@@ -13,14 +13,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
+            <a class=" navbar-brand" href="index.html"><img src="KICKSLogo.png" alt="KICKS Logo" height="40"> KICK<span class="brand-accent">S</span></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active " aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">Products</a>
@@ -94,12 +94,13 @@
                     <div class="card h-100 product-card">
                         <div class="card-img-wrapper">
                             <img src="images/product-images/air-max-pulse.jpg" class="card-img-top" alt="Air Max Pulse">
-                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                            <span class="badge badge-sale position-absolute top-0 start-0 m-2">-40%</span>
+                            <span class="badge badge-sale position-absolute top-0 m-2" style="left: 55px;">HOT</span>
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Air Max Pulse</h5>
                             <p class="card-text text-muted">Lightweight cushioning meets bold design</p>
-                            <p class="fw-bold text-danger fs-5 mb-3">₱7,495</p>
+                            <p class="price"><span class="original-price">&#8369;12,495.00</span> &#8369;7,495.00</p>
                             <div class="mt-auto d-flex gap-2">
                                 <a href="product-details.html" class="btn btn-outline-dark flex-fill">View Details</a>
                                 <button class="btn btn-add-cart btn-outline-dark flex-fill" data-name="Air Max Pulse" data-price="7495">Add to Cart</button>
@@ -213,18 +214,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer py-5">
+    <footer class="site-footer py-5 bg-dark text-white">
         <div class="container">
-            <div class="row g-4">
-
-                <!-- Column 1: Brand -->
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h4>
-                    <p class="footer-text">Premium sneakers and footwear for every stride.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">KICK<span class="brand-accent">S</span></h5>
+                    <p class="text-secondary small">Premium sneakers and footwear for every stride. Step up your game with KICKS.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary fs-5"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
-
-                <!-- Column 2: Quick Links -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled footer-links">
                         <li class="mb-2"><a href="index.html">Home</a></li>
@@ -234,9 +236,7 @@
                         <li class="mb-2"><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Contact Info -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="fw-bold mb-3">Contact Info</h5>
                     <ul class="list-unstyled footer-contact">
                         <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Bagtas, Tanza, Cavite</li>
@@ -244,23 +244,9 @@
                         <li class="mb-2"><i class="bi bi-envelope me-2"></i>support@kicks.com</li>
                     </ul>
                 </div>
-
             </div>
-
-            <hr class="my-4 border-secondary">
-
-            <!-- Social Icons -->
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-center">
-                <p class="footer-text mb-0">&copy; 2026 KICKS. All rights reserved.</p>
-            </div>
+            <hr class="border-secondary">
+            <p class="text-center text-secondary small mb-0">&copy; 2026 KICKS. All rights reserved.</p>
         </div>
     </footer>
 
