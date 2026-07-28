@@ -1,7 +1,7 @@
 /* ============================================================
-   KICKS E-Commerce – Main JavaScript
-   Handles: Cart, Navbar scroll, Scroll-to-top, Toast,
-   Product details, Cart page, Form validation
+  KICKS E-Commerce – Main JavaScript
+  Handles: Cart, Navbar scroll, Scroll-to-top, Toast,
+  Product details, Cart page, Form validation
    ============================================================ */
 
 
@@ -505,8 +505,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const name = btn.getAttribute('data-name');
       const price = parseInt(btn.getAttribute('data-price'));
+      const image = btn.getAttribute('data-image');
       if (!name || !price) return;
-      addToCart({ id: price, name, price, color: 'White', size: 'M' }, 1);
+      addToCart({ id: price, name, price, color: 'White', size: 'M', images: image ? [image] : [] }, 1);
       showToast(`${name} added to cart!`);
     });
   });
