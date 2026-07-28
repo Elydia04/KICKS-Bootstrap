@@ -297,53 +297,47 @@ function renderCartPage() {
 
   if (cart.length === 0) {
     container.innerHTML = `
-      <div class="text-center py-5">
-        <i class="bi bi-bag fs-1 text-muted mb-3 d-block"></i>
-        <h3>Your cart is empty</h3>
-        <p class="text-muted mb-4">Looks like you haven't added any items yet.</p>
-        <a href="products.html" class="btn btn-primary-custom">Continue Shopping</a>
-      </div>`;
+      <tr>
+        <td colspan="5" class="text-center py-5">
+          <i class="bi bi-bag fs-1 text-muted mb-3 d-block"></i>
+          <h3>Your cart is empty</h3>
+          <p class="text-muted mb-4">Looks like you haven't added any items yet.</p>
+          <a href="products.html" class="btn btn-primary-custom">Continue Shopping</a>
+        </td>
+      </tr>`;
     if (summary) summary.innerHTML = '';
     return;
   }
 
-  container.innerHTML = `
-    <table class="table mb-0 cart-table">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th class="text-end">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${cart.map(item => `
-          <tr>
-            <td>
-              <div class="d-flex align-items-center">
-                <img src="${item.images ? item.images[0] : 'images/product-images/placeholder.jpg'}"
-                  alt="${item.name}" class="rounded me-3"
-                  style="width:60px;height:60px;object-fit:cover;">
-                <div>
-                  <h6 class="mb-0">${item.name}</h6>
-                  <small class="text-muted">${item.color || 'White'} / ${item.size || 'M'}</small>
-                </div>
-              </div>
-            </td>
-            <td>₱${item.price.toLocaleString()}</td>
-            <td>
-              <div class="quantity-control">
-                <button onclick="changeQty('${item.id}', '${item.color}', '${item.size}', ${item.quantity - 1})">-</button>
-                <input type="text" value="${item.quantity}" readonly>
-                <button onclick="changeQty('${item.id}', '${item.color}', '${item.size}', ${item.quantity + 1})">+</button>
-              </div>
-            </td>
-            <td class="text-end fw-bold">₱${(item.price * item.quantity).toLocaleString()}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>`;
+  container.innerHTML = cart.map(item => `
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="${item.images ? item.images[0] : 'images/product-images/placeholder.jpg'}"
+            alt="${item.name}" class="rounded me-3"
+            style="width:60px;height:60px;object-fit:cover;">
+          <div>
+            <h6 class="mb-0">${item.name}</h6>
+            <small class="text-muted">${item.color || 'White'} / ${item.size || 'M'}</small>
+          </div>
+        </div>
+      </td>
+      <td>&#8369;${item.price.toLocaleString()}</td>
+      <td>
+        <div class="quantity-control">
+          <button onclick="changeQty(${item.id}, '${item.color}', '${item.size}', ${item.quantity - 1})">-</button>
+          <input type="text" value="${item.quantity}" readonly>
+          <button onclick="changeQty(${item.id}, '${item.color}', '${item.size}', ${item.quantity + 1})">+</button>
+        </div>
+      </td>
+      <td class="fw-bold">&#8369;${(item.price * item.quantity).toLocaleString()}</td>
+      <td class="text-center">
+        <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id}, '${item.color}', '${item.size}')" title="Remove">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </td>
+    </tr>
+  `).join('');
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const shipping = subtotal >= 5000 ? 0 : 99;
@@ -373,7 +367,6 @@ function renderCartPage() {
       </div>
       <div class="d-grid gap-2">
         <button class="btn btn-accent-custom btn-lg" onclick="checkout()">Proceed to Checkout</button>
-        <button class="btn btn-outline-secondary" onclick="clearCartAndReload()">Clear Cart</button>
         <a href="products.html" class="btn btn-outline-custom">Continue Shopping</a>
       </div>`;
   }
@@ -393,12 +386,60 @@ function checkout() {
   const cart = getCart();
   if (cart.length === 0) return;
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = total >= 5000 ? 0 : 99;
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const shipping = subtotal >= 5000 ? 0 : 99;
+  const total = subtotal + shipping;
 
-  alert(`Order Total: ₱${(total + shipping).toLocaleString()}\n\nThank you for shopping with KICKS!`);
+  const confirmEl = document.getElementById('checkoutConfirm');
+  const successEl = document.getElementById('checkoutSuccess');
+  if (confirmEl) confirmEl.style.display = 'block';
+  if (successEl) successEl.style.display = 'none';
+
+  const totalEl = document.getElementById('confirmTotal');
+  if (totalEl) totalEl.textContent = '\u20B1' + total.toLocaleString();
+
+  const modal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+  modal.show();
+}
+
+function confirmCheckout() {
+  const cart = getCart();
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const shipping = subtotal >= 5000 ? 0 : 99;
+  const total = subtotal + shipping;
+
+  const confirmEl = document.getElementById('checkoutConfirm');
+  const successEl = document.getElementById('checkoutSuccess');
+  if (confirmEl) confirmEl.style.display = 'none';
+  if (successEl) successEl.style.display = 'block';
+
+  const itemsEl = document.getElementById('checkoutItems');
+  if (itemsEl) {
+    itemsEl.innerHTML = cart.map(item =>
+      `<div class="d-flex justify-content-between align-items-center mb-2">
+        <div>
+          <span class="fw-semibold">${item.name}</span>
+          <small class="text-muted"> x${item.quantity}</small>
+        </div>
+        <span class="fw-bold">\u20B1${(item.price * item.quantity).toLocaleString()}</span>
+      </div>`
+    ).join('');
+  }
+
+  const subEl = document.getElementById('modalSubtotal');
+  const shipEl = document.getElementById('modalShipping');
+  const totalEl = document.getElementById('modalTotal');
+  if (subEl) subEl.textContent = '\u20B1' + subtotal.toLocaleString();
+  if (shipEl) shipEl.textContent = shipping === 0 ? 'FREE' : '\u20B1' + shipping;
+  if (totalEl) totalEl.textContent = '\u20B1' + total.toLocaleString();
+
   clearCartEmpties();
   renderCartPage();
+
+  setTimeout(() => {
+    const modal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+    if (modal) modal.hide();
+  }, 4000);
 }
 
 
@@ -460,8 +501,23 @@ document.addEventListener('DOMContentLoaded', () => {
   updateNavbarBadge();
   window.addEventListener('cartUpdated', updateNavbarBadge);
 
+  document.querySelectorAll('.btn-add-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.getAttribute('data-name');
+      const price = parseInt(btn.getAttribute('data-price'));
+      if (!name || !price) return;
+      addToCart({ id: price, name, price, color: 'White', size: 'M' }, 1);
+      showToast(`${name} added to cart!`);
+    });
+  });
+
   if (document.getElementById('productContent')) {
     renderProductDetails();
+  }
+
+  const clearCartBtn = document.getElementById('clear-cart');
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener('click', clearCartAndReload);
   }
 
   if (document.getElementById('cartItems')) {

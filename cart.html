@@ -24,7 +24,7 @@
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <a href="cart.html" class="position-relative text-decoration-none cart-icon-link active"><i class="bi bi-bag fs-5"></i><span class="cart-badge">3</span></a>
+        <a href="cart.html" class="position-relative text-decoration-none cart-icon-link active"><i class="bi bi-bag fs-5"></i><span class="cart-badge">0</span></a>
       </div>
     </div>
   </nav>
@@ -68,82 +68,7 @@
                 <th class="text-center">Action</th>
               </tr>
             </thead>
-            <tbody id="cart-table-body">
-              <!-- Row 1 -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center gap-3">
-                    <div class="product-icon bg-light rounded p-2">
-                      <i class="bi bi-shoe fs-3 text-dark"></i>
-                    </div>
-                    <span class="fw-semibold">Air Max Pulse</span>
-                  </div>
-                </td>
-                <td>&#8369;7,495</td>
-                <td>
-                  <div class="quantity-control d-flex align-items-center">
-                    <button class="btn btn-sm btn-outline-dark" type="button">-</button>
-                    <input type="number" class="form-control form-control-sm mx-2 text-center" value="2" min="1" style="width: 60px;">
-                    <button class="btn btn-sm btn-outline-dark" type="button">+</button>
-                  </div>
-                </td>
-                <td class="fw-bold">&#8369;14,990</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-outline-danger" title="Remove">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <!-- Row 2 -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center gap-3">
-                    <div class="product-icon bg-light rounded p-2">
-                      <i class="bi bi-shoe fs-3 text-dark"></i>
-                    </div>
-                    <span class="fw-semibold">Ultraboost 23</span>
-                  </div>
-                </td>
-                <td>&#8369;8,995</td>
-                <td>
-                  <div class="quantity-control d-flex align-items-center">
-                    <button class="btn btn-sm btn-outline-dark" type="button">-</button>
-                    <input type="number" class="form-control form-control-sm mx-2 text-center" value="1" min="1" style="width: 60px;">
-                    <button class="btn btn-sm btn-outline-dark" type="button">+</button>
-                  </div>
-                </td>
-                <td class="fw-bold">&#8369;8,995</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-outline-danger" title="Remove">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <!-- Row 3 -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center gap-3">
-                    <div class="product-icon bg-light rounded p-2">
-                      <i class="bi bi-shoe fs-3 text-dark"></i>
-                    </div>
-                    <span class="fw-semibold">Classic Leather Pro</span>
-                  </div>
-                </td>
-                <td>&#8369;5,495</td>
-                <td>
-                  <div class="quantity-control d-flex align-items-center">
-                    <button class="btn btn-sm btn-outline-dark" type="button">-</button>
-                    <input type="number" class="form-control form-control-sm mx-2 text-center" value="1" min="1" style="width: 60px;">
-                    <button class="btn btn-sm btn-outline-dark" type="button">+</button>
-                  </div>
-                </td>
-                <td class="fw-bold">&#8369;5,495</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-outline-danger" title="Remove">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
+            <tbody id="cartItems">
             </tbody>
           </table>
         </div>
@@ -163,7 +88,7 @@
           <div class="card-header bg-black text-center py-3">
             <h5 class="mb-0 fw-bold text-white">ORDER SUMMARY</h5>
           </div>
-          <div class="card-body">
+          <div class="card-body" id="orderSummary">
             <div class="d-flex justify-content-between mb-2">
               <span class="text-muted">Subtotal</span>
               <span id="cart-subtotal" class="fw-bold">&#8369;29,480</span>
@@ -230,15 +155,45 @@
   </footer>
 
   <!-- ========== TOAST NOTIFICATION ========== -->
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="cartToast" class="toast" role="alert">
-      <div class="toast-header bg-black text-white">
-        <i class="bi bi-bag-fill me-2"></i>
-        <strong class="me-auto">KICKS</strong>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
-      </div>
-      <div class="toast-body">
-        Cart updated successfully.
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- ========== CHECKOUT MODAL ========== -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-body text-center p-5">
+          <div id="checkoutSuccess" style="display:none;">
+            <i class="bi bi-check-circle-fill text-success" style="font-size:4rem;"></i>
+            <h3 class="fw-bold mt-3 mb-2">Order Confirmed!</h3>
+            <p class="text-muted mb-3">Thank you for shopping with KICKS.</p>
+            <div id="checkoutItems" class="text-start mb-3"></div>
+            <hr>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Subtotal</span>
+              <span id="modalSubtotal" class="fw-bold"></span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">Shipping</span>
+              <span id="modalShipping" class="fw-bold"></span>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+              <strong class="fs-5">Total</strong>
+              <strong class="fs-5 brand-accent" id="modalTotal"></strong>
+            </div>
+          </div>
+          <div id="checkoutConfirm">
+            <i class="bi bi-credit-card-2-front display-1 text-dark mb-3"></i>
+            <h4 class="fw-bold mb-2">Proceed to Checkout?</h4>
+            <p class="text-muted mb-1">You will be charged for your order.</p>
+            <div id="confirmTotal" class="fs-4 fw-bold brand-accent mb-4"></div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-accent-custom btn-lg fw-bold" onclick="confirmCheckout()">
+                <i class="bi bi-check-lg me-1"></i>Confirm Order
+              </button>
+              <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
