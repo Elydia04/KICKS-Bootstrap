@@ -680,3 +680,208 @@ img { max-width: 100%; height: auto; }
 .brand-accent {
   color: var(--accent-color);
 }
+
+#specDetailsBody .table-bordered {
+    --bs-table-bg: secondary;
+    --bs-table-color: white;
+    --bs-table-border-color: gray;
+}
+
+#specSpecsBody .table-bordered {
+    --bs-table-bg: secondary;
+    --bs-table-color: white;
+    --bs-table-border-color: gray;
+}
+
+/* ===========================================================
+  BOOTSTRAP UTILITY CLASSES REFERENCE (used across all pages)
+  ===========================================================
+
+  DISPLAY & LAYOUT:
+  d-flex            → display: flex
+  d-block           → display: block
+  d-none            → display: none
+  d-grid            → display: grid
+
+  FLEXBOX:
+  flex-fill         → flex: 1 1 auto
+  flex-wrap         → flex-wrap: wrap
+  gap-2 / gap-3 / gap-4  → flex/grid gap (0.5rem / 1rem / 1.5rem)
+  justify-content-center → center items horizontally
+  justify-content-between → space items apart
+  justify-content-end   → align items to the right
+  justify-content-md-end → right-align on medium+ screens
+  align-items-center → center items vertically
+
+  MARGIN (m) & PADDING (p):
+  m-0 / m-2 / m-3 / m-4  → margin all sides
+  mt-0 / mt-2 / mt-3 / mt-4 / mt-5  → margin-top
+  mb-0 / mb-1 / mb-2 / mb-3 / mb-4 / mb-5  → margin-bottom
+  ms-2 / ms-auto  → margin-start (left)
+  me-1 / me-2 / me-5  → margin-end (right)
+  mx-auto          → margin left & right auto (centers block)
+  mx-auto          → margin left & right auto
+  p-0 / p-2 / p-3 / p-4  → padding all sides
+  py-3 / py-5      → padding top & bottom
+  px-2 / px-5      → padding left & right
+  ps-2 / pe-2      → padding-start / padding-end
+
+  GRID:
+  row              → flex row container
+  col-lg-3 / col-lg-4 / col-lg-6  → column width on large screens
+  col-md-4 / col-md-6  → column width on medium screens
+  col-sm-6         → column width on small screens
+  col-12           → full width on all screens
+  g-4 / g-5        → gutter gap between grid items (1.5rem / 3rem)
+
+  TEXT:
+  text-center       → center text
+  text-start        → left-align text
+  text-end          → right-align text
+  text-uppercase     → uppercase text
+  text-decoration-none → remove underline
+  text-white        → white text
+  text-muted        → gray/muted text
+  text-secondary    → secondary color text
+  text-white-50     → white at 50% opacity
+  text-danger       → red text
+  text-success      → green text
+  text-warning      → yellow text
+  text-bg-success   → green background + white text
+
+  TYPOGRAPHY:
+  fw-bold           → font-weight: bold
+  fw-semibold       → font-weight: 600
+  fs-1 / fs-5       → font-size scale
+  display-2 / display-3 / display-4  → large heading sizes
+  lead              → larger paragraph text
+  h1 / h2 / h3 / h4 / h5 / h6  → heading sizes
+  small             → small text
+  mb-0 / mb-1 / mb-2 / mb-3 / mb-4 / mb-5  → margin-bottom
+
+  SPACING UTILITIES:
+  w-25 / w-50 / w-100  → width percentage
+  h-100             → height: 100%
+
+  BACKGROUND:
+  bg-dark           → dark background
+  bg-black          → black background
+  bg-light          → light background
+  bg-white          → white background
+  bg-danger         → red background
+  bg-success        → green background
+  bg-warning        → yellow background
+
+  BORDERS & ROUNDED:
+  border-0          → no border
+  border            → 1px border
+  border-secondary  → gray border
+  border-danger     → red border
+  border-dark       → dark border
+  border-top / border-bottom  → single-side border
+  rounded           → border-radius
+  rounded-3 / rounded-4  → larger border-radius
+  rounded-circle    → 50% radius (pill/circle)
+
+  POSITIONING:
+  position-relative → relative positioning
+  position-absolute → absolute positioning
+  top-0 / start-0 / end-0  → position from edge
+  fixed / sticky    → fixed or sticky positioning
+  fixed-bottom / fixed-top → fixed to viewport edge
+
+  SPACING BETWEEN:
+  me-2 / me-5       → margin-end (right side spacing)
+  ms-2              → margin-start (left side spacing)
+
+  BUTTONS:
+  btn               → base button
+  btn-lg            → large button
+  btn-sm            → small button
+  btn-outline-*     → outline style button (danger, dark, light, success)
+  btn-danger        → red filled button
+  btn-close         → close (X) button
+  btn-close-white   → white close button
+  w-100             → full width (used on buttons)
+
+  FORMS:
+  form-control       → styled form input
+  form-control-sm    → smaller form input
+  form-select        → styled select dropdown
+  form-label         → styled form label
+  input-group        → groups input + button together
+
+  CARD:
+  card              → card container
+  card-body         → card content area
+  card-header       → card top section
+  card-img-top      → image at top of card
+  h-100             → full height card
+
+  TABLE:
+  table             → styled table
+  table-dark        → dark themed table
+  table-bordered    → table with borders
+  table-responsive  → horizontal scroll on small screens
+
+  MODAL:
+  modal             → modal wrapper
+  modal-dialog      → modal layout
+  modal-content     → modal inner container
+  modal-header      → modal top bar
+  modal-body        → modal content
+  modal-lg          → large modal
+  modal-dialog-centered → vertically centered
+
+  TOAST & ALERT:
+  toast             → toast notification
+  alert             → alert banner
+  alert-success     → green alert
+  alert-dismissible → has close button
+  show              → makes element visible
+
+  NAVBAR:
+  navbar            → navbar container
+  navbar-expand-lg  → collapse on small, expand on large
+  navbar-dark       → dark theme navbar
+  navbar-brand      → logo/brand link
+  navbar-toggler    → hamburger menu button
+  navbar-nav        → nav list
+  navbar-toggler-icon → hamburger icon
+
+  OFFCANVAS:
+  offcanvas          → slide-out panel
+  offcanvas-end      → slides from right
+  offcanvas-header   → panel header
+  offcanvas-body     → panel content
+
+  BREADCRUMB:
+  breadcrumb         → breadcrumb list
+  breadcrumb-item    → breadcrumb link
+  breadcrumb-item.active → current page (no link)
+
+  PAGINATION:
+  pagination         → pagination list
+  page-item          → pagination link wrapper
+  page-link          → pagination link
+
+  ACCORDION:
+  accordion          → accordion container
+  accordion-item     → accordion section
+  accordion-button   → clickable header
+  accordion-collapse → collapsible body
+  accordion-header   → button wrapper
+
+  SCROLL & UTILITY:
+  container          → centered max-width wrapper
+  section            → semantic section
+  sticky-top         → sticks to top on scroll
+    overflow-hidden    → clips overflow content
+    position-relative  → relative positioning context
+    opacity-0 / opacity-100  → transparency
+    z-index            → stacking order
+
+    RESPONSIVE VISIBILITY:
+    d-none / d-lg-block  → hide on small, show on large
+    d-md-none / d-md-flex → hide/show at breakpoints
+*/

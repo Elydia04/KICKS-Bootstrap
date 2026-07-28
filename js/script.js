@@ -638,15 +638,15 @@ document.addEventListener('DOMContentLoaded', () => {
   updateNavbarBadge();
   window.addEventListener('cartUpdated', updateNavbarBadge);
 
-  document.querySelectorAll('.btn-add-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const name = btn.getAttribute('data-name');
-      const price = parseInt(btn.getAttribute('data-price'));
-      const image = btn.getAttribute('data-image');
-      if (!name || !price) return;
-      addToCart({ id: price, name, price, color: 'White', size: 'M', images: image ? [image] : [] }, 1);
-      showToast(`${name} added to cart!`);
-    });
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.btn-add-cart');
+    if (!btn) return;
+    const name = btn.getAttribute('data-name');
+    const price = parseInt(btn.getAttribute('data-price'));
+    const image = btn.getAttribute('data-image');
+    if (!name || !price) return;
+    addToCart({ id: price, name, price, color: 'White', size: 'M', images: image ? [image] : [] }, 1);
+    showToast(name + ' added to cart!');
   });
 
   if (document.getElementById('productContent')) {

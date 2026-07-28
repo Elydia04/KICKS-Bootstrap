@@ -53,7 +53,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
                 <li class="breadcrumb-item"><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page" id="breadcrumbProduct">Loading...</li>
+                <li class="breadcrumb-item active text-white" aria-current="page" id="breadcrumbProduct"></li>
             </ol>
         </nav>
     </div>
@@ -151,7 +151,7 @@
     <div class="container">
         <div class="row align-items-center mb-4">
             <div class="col-md-6 mb-3 mb-md-0">
-                <h4 class="fw-bold mb-0">KICK<span class="brand-accent">S</span></h4>
+                <h4 class="fw-bold mb-0 text-white">KICK<span class="brand-accent">S</span></h4>
                 <p class="text-secondary small mb-0">Premium sneakers for every stride.</p>
             </div>
             <div class="col-md-6 text-md-end">
@@ -165,7 +165,7 @@
         <hr class="border-secondary">
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-3">
-                <h6 class="fw-bold text-uppercase mb-3">Contact</h6>
+                <h6 class="fw-bold text-uppercase mb-3 text-white">Contact</h6>
                 <ul class="list-unstyled footer-contact small">
                     <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Bagtas, Tanza, Cavite</li>
                     <li class="mb-2"><i class="bi bi-telephone me-2"></i>+63 917 555 0199</li>
@@ -173,7 +173,7 @@
                 </ul>
             </div>
             <div class="col-lg-4 col-md-6 mb-3">
-                <h6 class="fw-bold text-uppercase mb-3">Quick Links</h6>
+                <h6 class="fw-bold text-uppercase mb-3 text-white">Quick Links</h6>
                 <ul class="list-unstyled footer-links small">
                     <li class="mb-2"><a href="index.html">Home</a></li>
                     <li class="mb-2"><a href="products.html">Products</a></li>
@@ -182,7 +182,7 @@
                 </ul>
             </div>
             <div class="col-lg-4 col-md-12 mb-3">
-                <h6 class="fw-bold text-uppercase mb-3">Newsletter</h6>
+                <h6 class="fw-bold text-uppercase mb-3 text-white">Newsletter</h6>
                 <p class="text-secondary small">Get updates on new drops and exclusive offers.</p>
                 <div class="input-group">
                     <input type="email" class="form-control form-control-sm bg-dark text-white border-secondary" placeholder="Your email">
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('breadcrumbProduct').textContent = product.name;
 
     const starsHtml = '<i class="bi bi-star-fill text-warning"></i>'.repeat(product.rating) +
-                      '<i class="bi bi-star text-warning"></i>'.repeat(5 - product.rating);
+                    '<i class="bi bi-star text-warning"></i>'.repeat(5 - product.rating);
 
     const priceHtml = product.oldPrice
         ? '<span class="text-decoration-line-through text-muted me-2" style="font-size:1.2rem;">&#8369;' + product.oldPrice.toLocaleString() + '</span> <span class="text-white fw-bold fs-3">&#8369;' + product.price.toLocaleString() + '</span>'
@@ -247,12 +247,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="mb-3">${priceHtml}</div>
                 <p class="text-white-50 mb-4">${product.description}</p>
                 <span class="badge bg-success mb-4">In Stock</span>
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <label class="text-white fw-semibold">Quantity:</label>
-                    <div class="input-group" style="width: 140px;">
-                        <button class="btn btn-outline-light" type="button" id="qty-minus">&#8722;</button>
-                        <input type="number" class="form-control text-center bg-dark text-white border-secondary" id="qty-input" value="1" min="1">
-                        <button class="btn btn-outline-light" type="button" id="qty-plus">+</button>
+                <div class="d-flex align-items-center gap-4 mb-4">
+                    <div>
+                        <label class="text-white fw-semibold">Size:</label>
+                        <select class="form-select bg-dark text-white border-secondary" id="size-select" style="width: 150px;">
+                            ${(product.sizes || []).map(s => '<option value="' + s + '">' + s + '</option>').join('')}
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-white fw-semibold">Quantity:</label>
+                        <div class="input-group" style="width: 140px;">
+                            <button class="btn btn-outline-light" type="button" id="qty-minus">&#8722;</button>
+                            <input type="number" class="form-control text-center bg-dark text-white border-secondary" id="qty-input" value="1" min="1">
+                            <button class="btn btn-outline-light" type="button" id="qty-plus">+</button>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex flex-wrap gap-3 mb-4">
