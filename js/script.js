@@ -5,6 +5,143 @@
    ============================================================ */
 
 
+/* 0. PRODUCT DATA */
+const products = [
+  {
+    id: 1, name: 'Air Max Pulse', price: 7495, oldPrice: 12495,
+    image: 'images/product-images/air-max-pulse.jpg',
+    images: ['images/product-images/air-max-pulse.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Experience next-level comfort with Air Max Pulse. Featuring revolutionary Air cushioning technology, a sleek knit upper, and a durable rubber outsole.',
+    rating: 5, reviews: 2847, category: 'Running',
+    colors: ['Black/White/Red', 'White/Blue', 'All Black'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>DC4165-002</td></tr><tr><th>Color</th><td>Black/White/Red</td></tr><tr><th>Weight</th><td>340g</td></tr><tr><th>Technology</th><td>Air Max cushioning</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Engineered knit</td></tr><tr><th>Outsole</th><td>Rubber</td></tr><tr><th>Closure</th><td>Lace-up</td></tr><tr><th>Season</th><td>All-season</td></tr></tbody></table>'
+  },
+  {
+    id: 2, name: 'Ultraboost 23', price: 8995, oldPrice: null,
+    image: 'images/product-images/ultraboost-23.jpg',
+    images: ['images/product-images/ultraboost-23.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Energy return for your daily runs. Premium Boost midsole delivers unmatched energy return with every stride.',
+    rating: 5, reviews: 1923, category: 'Running',
+    colors: ['Core Black', 'Cloud White', 'Grey/Blue'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>HQ6340-014</td></tr><tr><th>Weight</th><td>310g</td></tr><tr><th>Technology</th><td>Boost midsole</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Primeknit+</td></tr><tr><th>Outsole</td><td>Continental Rubber</td></tr><tr><th>Closure</th><td>Lace-up</td></tr></tbody></table>'
+  },
+  {
+    id: 3, name: 'Classic Leather Pro', price: 5495, oldPrice: null,
+    image: 'images/product-images/classic-leather-pro.jpg',
+    images: ['images/product-images/classic-leather-pro.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Timeless style, modern comfort. Premium leather upper with MemoryTech foam sockliner for all-day cushioning.',
+    rating: 4, reviews: 856, category: 'Lifestyle',
+    colors: ['White', 'Black', 'Navy'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>402571-112</td></tr><tr><th>Weight</th><td>355g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Full-grain leather</td></tr><tr><th>Outsole</th><td>Rubber</td></tr><tr><th>Closure</th><td>Lace-up</td></tr></tbody></table>'
+  },
+  {
+    id: 4, name: 'Running Elite X', price: 6795, oldPrice: 11325,
+    image: 'images/product-images/running-elite-x.jpg',
+    images: ['images/product-images/running-elite-x.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Engineered for speed and comfort. Carbon fiber plate technology propels you forward with responsive cushioning.',
+    rating: 5, reviews: 1240, category: 'Running',
+    colors: ['Volt/Black', 'Blue/White', 'Red/Black'],
+    sizes: [7, 8, 9, 10, 11],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>RE-X-2024</td></tr><tr><th>Weight</th><td>225g</td></tr><tr><th>Technology</th><td>Carbon fiber plate</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Ultra-light mesh</td></tr><tr><th>Outsole</th><td>Carbon rubber</td></tr></tbody></table>'
+  },
+  {
+    id: 5, name: 'Street Runner V2', price: 4995, oldPrice: null,
+    image: 'images/product-images/street-runner-v2.jpg',
+    images: ['images/product-images/street-runner-v2.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Urban style meets performance. Versatile enough for the gym and stylish enough for the streets.',
+    rating: 4, reviews: 672, category: 'Lifestyle',
+    colors: ['White/Grey', 'Black/Green', 'Blue/Orange'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>SR-V2-001</td></tr><tr><th>Weight</th><td>320g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Synthetic mesh</td></tr><tr><th>Outsole</th><td>Rubber</td></tr></tbody></table>'
+  },
+  {
+    id: 6, name: 'Air Jordan Legacy', price: 9495, oldPrice: null,
+    image: 'images/product-images/air-jordan-legacy.jpg',
+    images: ['images/product-images/air-jordan-legacy.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Iconic design, premium quality. A basketball legend reborn with modern cushioning and premium materials.',
+    rating: 5, reviews: 3210, category: 'Basketball',
+    colors: ['White/Red', 'Black/Red', 'White/Black'],
+    sizes: [7, 8, 9, 10, 11, 12, 13],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>DZ5485-517</td></tr><tr><th>Weight</th><td>385g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Leather and synthetic</td></tr><tr><th>Outsole</th><td>Rubber</td></tr></tbody></table>'
+  },
+  {
+    id: 7, name: 'Trail Blazer GTX', price: 7295, oldPrice: 12160,
+    image: 'images/product-images/trail-blazer-gtx.jpg',
+    images: ['images/product-images/trail-blazer-gtx.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'All-terrain performance for off-road adventures. GORE-TEX waterproof membrane keeps feet dry in any condition.',
+    rating: 5, reviews: 987, category: 'Running',
+    colors: ['Olive/Black', 'Grey/Orange', 'Brown/Green'],
+    sizes: [8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>TBG-GTX-003</td></tr><tr><th>Weight</th><td>390g</td></tr><tr><th>Technology</th><td>GORE-TEX waterproof</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Nubuck leather + mesh</td></tr><tr><th>Outsole</th><td>Vibram Megagrip</td></tr></tbody></table>'
+  },
+  {
+    id: 8, name: 'Daily Comfort Fit', price: 3995, oldPrice: 6660,
+    image: 'images/product-images/daily-comfort-fit.jpg',
+    images: ['images/product-images/daily-comfort-fit.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Everyday sneakers for all-day wear. Ultra-soft Cloudfoam insole molds to your foot for personalized comfort.',
+    rating: 4, reviews: 1450, category: 'Lifestyle',
+    colors: ['White', 'Black', 'Grey', 'Navy'],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>DCF-100</td></tr><tr><th>Weight</th><td>280g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Knit textile</td></tr><tr><th>Outsole</th><td>EVA</td></tr></tbody></table>'
+  },
+  {
+    id: 9, name: 'Pro Court Elite', price: 5995, oldPrice: null,
+    image: 'images/product-images/pro-court-elite.jpg',
+    images: ['images/product-images/pro-court-elite.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Court-ready performance shoes. Herringbone traction pattern delivers maximum grip for quick lateral movements.',
+    rating: 4, reviews: 543, category: 'Basketball',
+    colors: ['White/Blue', 'Black/White', 'Red/Black'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>PCE-ELT-007</td></tr><tr><th>Weight</th><td>360g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Mesh + TPU overlay</td></tr><tr><th>Outsole</th><td>Rubber herringbone</td></tr></tbody></table>'
+  },
+  {
+    id: 10, name: 'Flex Run Ultra', price: 6495, oldPrice: null,
+    image: 'images/product-images/flex-run-ultra.jpg',
+    images: ['images/product-images/flex-run-ultra.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Maximum flexibility, minimum weight. Flex grooves in the outsole allow natural foot movement mile after mile.',
+    rating: 4, reviews: 782, category: 'Running',
+    colors: ['Volt/Black', 'Blue/White', 'Pink/Black'],
+    sizes: [6, 7, 8, 9, 10, 11],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>FRU-2024</td></tr><tr><th>Weight</th><td>235g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Engineered mesh</td></tr><tr><th>Outsole</th><td>Flex rubber</td></tr></tbody></table>'
+  },
+  {
+    id: 11, name: 'Urban Mid Premium', price: 8295, oldPrice: null,
+    image: 'images/product-images/urban-mid-premium.jpg',
+    images: ['images/product-images/urban-mid-premium.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Street-ready mid-top sneakers. Padded collar and tongue provide ankle support and a snug, comfortable fit.',
+    rating: 4, reviews: 410, category: 'Lifestyle',
+    colors: ['Black', 'Olive', 'White/Black'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>UMP-012</td></tr><tr><th>Weight</th><td>400g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Premium suede + leather</td></tr><tr><th>Outsole</th><td>Rubber</td></tr></tbody></table>'
+  },
+  {
+    id: 12, name: 'Sport Cross Trainer', price: 5295, oldPrice: null,
+    image: 'images/product-images/sport-cross-trainer.jpg',
+    images: ['images/product-images/sport-cross-trainer.jpg', 'images/product-images/carousel-1.jpg', 'images/product-images/carousel-2.jpg'],
+    description: 'Versatile training shoe built for the gym and beyond. Stable base for lifts and cushioned for short runs.',
+    rating: 4, reviews: 635, category: 'Training',
+    colors: ['Black/Red', 'Grey/Blue', 'White/Black'],
+    sizes: [7, 8, 9, 10, 11, 12],
+    details: '<table class="table table-bordered mb-0"><tbody><tr><th>Style</th><td>SCT-TRN-005</td></tr><tr><th>Weight</th><td>335g</td></tr></tbody></table>',
+    material: '<table class="table table-bordered mb-0"><tbody><tr><th>Upper</th><td>Breathable mesh</td></tr><tr><th>Outsole</th><td>Non-marking rubber</td></tr></tbody></table>'
+  }
+];
+
+
 /* 1. CART MANAGEMENT */
 
 function getCart() {
